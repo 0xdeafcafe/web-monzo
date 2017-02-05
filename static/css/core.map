@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../scss/core.css",
+	"sources": [
+		"../scss/core.scss",
+		"../scss/partials/_alert.scss"
+	],
+	"sourcesContent": [
+		"@import 'partials/_alert';\n",
+		".alert {\n\tborder: 1px solid #fff;\n\tborder-radius: 6px;\n\tbackground: #fff;\n\tdisplay: block;\n\n\t// width: 100%;\n\tmargin: 15px auto;\n\tpadding: 6px 10px;\n\tpadding-bottom: 10px;\n\n\ttext-align: left;\n\tfont-size: 14px;\n\n\t&.alert-warning {\n\t\tborder: 1px solid #f79d3f;\n\t\tbackground: #e6841e;\n\t}\n\n\t>strong {\n\t\tline-height: 1.6;\n\t\tfont-size: 16px;\n\t}\n}\n"
+	],
+	"mappings": ";ACAA,AAAA,MAAM,CAAC;EACN,MAAM,EAAE,cAAe;EACvB,aAAa,EAAE,GAAI;EACnB,UAAU,EAAE,IAAK;EACjB,OAAO,EAAE,KAAM;EAGf,MAAM,EAAE,SAAU;EAClB,OAAO,EAAE,QAAS;EAClB,cAAc,EAAE,IAAK;EAErB,UAAU,EAAE,IAAK;EACjB,SAAS,EAAE,IAAK;CAWhB;;;AAvBD,AAAA,MAAM,AAcJ,cAAc,CAAC;EACf,MAAM,EAAE,iBAAkB;EAC1B,UAAU,EAAE,OAAQ;CACpB;;;AAjBF,AAmBE,MAnBI,GAmBJ,MAAM,CAAC;EACP,WAAW,EAAE,GAAI;EACjB,SAAS,EAAE,IAAK;CAChB",
+	"names": []
+}

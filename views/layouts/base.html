@@ -1,0 +1,7 @@
+{{ if notEq .useLayout "false" }}
+	{{ template "content" . }}
+{{ end }}
+
+{{ if eq .useLayout "false" }}
+	{{ template "content" . }}
+{{ end }}

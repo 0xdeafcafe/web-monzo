@@ -1,0 +1,34 @@
+{{ define "content" }}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{{ .title }}</title>
+	<link rel="stylesheet" href="/static/css/core.css" />
+	<link rel="stylesheet" href="/static/css/auth.css" />
+
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<main>
+		<div class="logo"></div>
+		<h1>Login using Monzo</h1>
+		<p>
+			write something here
+		</p>
+		{{ if .warning }}
+			<div class="alert alert-warning">
+				<strong>Oops...</strong><br />
+				{{ .warning }}
+			</div>
+		{{ end }}
+		<a href="/auth/create">
+			Go to Monzo.com
+		</a>
+	</main>
+</body>
+</html>
+{{ end }}

@@ -1,0 +1,26 @@
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/partials/_alert.scss */
+.alert {
+  border: 1px solid #fff;
+  border-radius: 6px;
+  background: #fff;
+  display: block;
+  margin: 15px auto;
+  padding: 6px 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/partials/_alert.scss */
+.alert.alert-warning {
+  border: 1px solid #f79d3f;
+  background: #e6841e;
+}
+
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/partials/_alert.scss */
+.alert > strong {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=../css/core.map */

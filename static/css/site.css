@@ -1,0 +1,16 @@
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/partials/_alert.scss */
+.alert {
+  border: 1px solid #fff;
+  background: #fff;
+  display: block;
+  margin: 15px;
+  padding: 10px;
+}
+
+/* line 9, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/partials/_alert.scss */
+> .alert.alert-warning {
+  border: 1px solid orange;
+  background: orange;
+}
+
+/*# sourceMappingURL=../css/site.map */

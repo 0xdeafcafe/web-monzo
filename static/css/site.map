@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../scss/site.css",
+	"sources": [
+		"../scss/site.scss",
+		"../scss/partials/_alert.scss"
+	],
+	"sourcesContent": [
+		"@import 'partials/_alert';\n",
+		".alert {\n\tborder: 1px solid #fff;\n\tbackground: #fff;\n\tdisplay: block;\n\n\tmargin: 15px;\n\tpadding: 10px;\n\n\t>&.alert-warning {\n\t\tborder: 1px solid orange;\n\t\tbackground: orange;\n\t}\n\n\t>.strong {\n\t}\n}\n"
+	],
+	"mappings": ";ACAA,AAAA,MAAM,CAAC;EACN,MAAM,EAAE,cAAe;EACvB,UAAU,EAAE,IAAK;EACjB,OAAO,EAAE,KAAM;EAEf,MAAM,EAAE,IAAK;EACb,OAAO,EAAE,IAAK;CASd;;;EAfD,AAAA,MAAM,AAQH,cAAc,CAAC;EAChB,MAAM,EAAE,gBAAiB;EACzB,UAAU,EAAE,MAAO;CACnB",
+	"names": []
+}
