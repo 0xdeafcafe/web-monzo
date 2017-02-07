@@ -1,0 +1,4298 @@
+/*!
+    
+ =========================================================
+ * Light Bootstrap Dashboard - v1.3.1.0
+ =========================================================
+ 
+ * Product Page: http://www.creative-tim.com/product/light-bootstrap-dashboard
+ * Copyright 2017 Creative Tim (http://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE.md)
+ 
+ =========================================================
+ 
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ 
+ */
+/*      light colors         */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes spin {
+  /* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_morphing-buttons.scss */
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  /* line 33, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_morphing-buttons.scss */
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+/*           Font Smoothing      */
+/* line 2, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+body,
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+p,
+.navbar,
+.brand,
+.btn-simple,
+.alert,
+a,
+.td-name,
+td,
+button.close {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+  font-weight: 400;
+}
+
+/* line 24, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  font-weight: 300;
+  margin: 30px 0 15px;
+}
+
+/* line 29, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h1, .h1 {
+  font-size: 52px;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h2, .h2 {
+  font-size: 36px;
+}
+
+/* line 35, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h3, .h3 {
+  font-size: 28px;
+  margin: 20px 0 10px;
+}
+
+/* line 39, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h4, .h4 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+/* line 43, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h5, .h5 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* line 47, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h6, .h6 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* line 52, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* line 57, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
+  color: #9A9A9A;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* line 63, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
+  font-size: 60%;
+}
+
+/* line 67, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+h1 .subtitle {
+  display: block;
+  margin: 0 0 30px;
+}
+
+/* line 72, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+.text-muted {
+  color: #9A9A9A;
+}
+
+/* line 75, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+.text-primary, .text-primary:hover {
+  color: #1D62F0 !important;
+}
+
+/* line 78, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+.text-info, .text-info:hover {
+  color: #1DC7EA !important;
+}
+
+/* line 81, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+.text-success, .text-success:hover {
+  color: #87CB16 !important;
+}
+
+/* line 84, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+.text-warning, .text-warning:hover {
+  color: #FF9500 !important;
+}
+
+/* line 87, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_typography.scss */
+.text-danger, .text-danger:hover {
+  color: #FF4A55 !important;
+}
+
+/*     General overwrite     */
+/* line 2, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+body,
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* line 7, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+a {
+  color: #1DC7EA;
+}
+
+/* line 10, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+a:hover, a:focus {
+  color: #42d0ed;
+  text-decoration: none;
+}
+
+/* line 16, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+a:focus, a:active,
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  outline: 0;
+}
+
+/* line 26, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+.ui-slider-handle:focus,
+.navbar-toggle,
+input:focus {
+  outline: 0 !important;
+}
+
+/*           Animations              */
+/* line 33, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+.form-control,
+.input-group-addon,
+.tagsinput,
+.navbar,
+.navbar .alert {
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+/* line 41, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+.sidebar .nav a,
+.table > tbody > tr .td-actions .btn {
+  -webkit-transition: all 150ms ease-in;
+  -moz-transition: all 150ms ease-in;
+  -o-transition: all 150ms ease-in;
+  -ms-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+.btn {
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  -ms-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+
+/* line 49, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+.fa {
+  width: 18px;
+  text-align: center;
+}
+
+/* line 53, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+.margin-top {
+  margin-top: 50px;
+}
+
+/* line 57, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_misc.scss */
+.wrapper {
+  position: relative;
+  top: 0;
+  height: 100vh;
+}
+
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar,
+body > .navbar-collapse {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  display: block;
+  z-index: 1;
+  color: #fff;
+  font-weight: 200;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .sidebar-wrapper,
+body > .navbar-collapse .sidebar-wrapper {
+  position: relative;
+  max-height: calc(100vh - 75px);
+  min-height: 100%;
+  overflow: auto;
+  width: 260px;
+  z-index: 4;
+  padding-bottom: 100px;
+}
+
+/* line 26, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .sidebar-background,
+body > .navbar-collapse .sidebar-background {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* line 38, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo,
+body > .navbar-collapse .logo {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 42, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo p,
+body > .navbar-collapse .logo p {
+  float: left;
+  font-size: 20px;
+  margin: 10px 10px;
+  color: #FFFFFF;
+  line-height: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo .simple-text,
+body > .navbar-collapse .logo .simple-text {
+  text-transform: uppercase;
+  padding: 5px 0px;
+  display: block;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/* line 63, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo-tim,
+body > .navbar-collapse .logo-tim {
+  border-radius: 50%;
+  border: 1px solid #333;
+  display: block;
+  height: 61px;
+  width: 61px;
+  float: left;
+  overflow: hidden;
+}
+
+/* line 72, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo-tim img,
+body > .navbar-collapse .logo-tim img {
+  width: 60px;
+  height: 60px;
+}
+
+/* line 78, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav,
+body > .navbar-collapse .nav {
+  margin-top: 20px;
+  float: none;
+}
+
+/* line 83, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav li > a,
+body > .navbar-collapse .nav li > a {
+  color: #FFFFFF;
+  margin: 5px 15px;
+  opacity: .86;
+  border-radius: 4px;
+  display: block;
+}
+
+/* line 91, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav li:hover > a,
+body > .navbar-collapse .nav li:hover > a {
+  background: rgba(255, 255, 255, 0.13);
+  opacity: 1;
+}
+
+/* line 96, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav li.active > a,
+body > .navbar-collapse .nav li.active > a {
+  color: #FFFFFF;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.23);
+}
+
+/* line 103, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav li.separator,
+body > .navbar-collapse .nav li.separator {
+  margin: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 107, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav li.separator + li,
+body > .navbar-collapse .nav li.separator + li {
+  margin-top: 31px;
+}
+
+/* line 113, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav p,
+body > .navbar-collapse .nav p {
+  margin: 0;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 45px;
+}
+
+/* line 122, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav i,
+body > .navbar-collapse .nav i {
+  font-size: 28px;
+  float: left;
+  margin-right: 15px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+}
+
+/* line 131, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .nav .caret,
+body > .navbar-collapse .nav .caret {
+  margin-top: 13px;
+  position: absolute;
+  right: 30px;
+}
+
+/* line 138, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo,
+body > .navbar-collapse .logo {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 142, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo p,
+body > .navbar-collapse .logo p {
+  float: left;
+  font-size: 20px;
+  margin: 10px 10px;
+  color: #FFFFFF;
+  line-height: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 151, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo .simple-text,
+body > .navbar-collapse .logo .simple-text {
+  text-transform: uppercase;
+  padding: 5px 0px;
+  display: block;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/* line 163, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo-tim,
+body > .navbar-collapse .logo-tim {
+  border-radius: 50%;
+  border: 1px solid #333;
+  display: block;
+  height: 61px;
+  width: 61px;
+  float: left;
+  overflow: hidden;
+}
+
+/* line 172, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar .logo-tim img,
+body > .navbar-collapse .logo-tim img {
+  width: 60px;
+  height: 60px;
+}
+
+/* line 178, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar:after, .sidebar:before,
+body > .navbar-collapse:after,
+body > .navbar-collapse:before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* line 190, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar:before,
+body > .navbar-collapse:before {
+  opacity: .33;
+  background: #000000;
+}
+
+/* line 195, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar:after,
+body > .navbar-collapse:after {
+  background: #787878;
+  background: -moz-linear-gradient(top, #787878 0%, #343434 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #787878), color-stop(100%, #343434));
+  background: -webkit-linear-gradient(top, #787878 0%, #343434 100%);
+  background: -o-linear-gradient(top, #787878 0%, #343434 100%);
+  background: -ms-linear-gradient(top, #787878 0%, #343434 100%);
+  background: linear-gradient(to bottom, #787878 0%, #343434 100%);
+  background-size: 150% 150%;
+  z-index: 3;
+  opacity: 1;
+}
+
+/* line 201, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar[data-image]:after, .sidebar.has-image:after,
+body > .navbar-collapse[data-image]:after,
+body > .navbar-collapse.has-image:after {
+  opacity: .77;
+}
+
+/* line 206, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar[data-color="blue"]:after,
+body > .navbar-collapse[data-color="blue"]:after {
+  background: #1F77D0;
+  background: -moz-linear-gradient(top, #1F77D0 0%, #533ce1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1F77D0), color-stop(100%, #533ce1));
+  background: -webkit-linear-gradient(top, #1F77D0 0%, #533ce1 100%);
+  background: -o-linear-gradient(top, #1F77D0 0%, #533ce1 100%);
+  background: -ms-linear-gradient(top, #1F77D0 0%, #533ce1 100%);
+  background: linear-gradient(to bottom, #1F77D0 0%, #533ce1 100%);
+  background-size: 150% 150%;
+}
+
+/* line 209, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar[data-color="azure"]:after,
+body > .navbar-collapse[data-color="azure"]:after {
+  background: #14233c;
+  background: -moz-linear-gradient(top, #14233c 0%, #37435b 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #14233c), color-stop(100%, #37435b));
+  background: -webkit-linear-gradient(top, #14233c 0%, #37435b 100%);
+  background: -o-linear-gradient(top, #14233c 0%, #37435b 100%);
+  background: -ms-linear-gradient(top, #14233c 0%, #37435b 100%);
+  background: linear-gradient(to bottom, #14233c 0%, #37435b 100%);
+  background-size: 150% 150%;
+}
+
+/* line 212, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar[data-color="green"]:after,
+body > .navbar-collapse[data-color="green"]:after {
+  background: #87CB16;
+  background: -moz-linear-gradient(top, #87CB16 0%, #6dc030 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #87CB16), color-stop(100%, #6dc030));
+  background: -webkit-linear-gradient(top, #87CB16 0%, #6dc030 100%);
+  background: -o-linear-gradient(top, #87CB16 0%, #6dc030 100%);
+  background: -ms-linear-gradient(top, #87CB16 0%, #6dc030 100%);
+  background: linear-gradient(to bottom, #87CB16 0%, #6dc030 100%);
+  background-size: 150% 150%;
+}
+
+/* line 215, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar[data-color="orange"]:after,
+body > .navbar-collapse[data-color="orange"]:after {
+  background: #FFA534;
+  background: -moz-linear-gradient(top, #FFA534 0%, #ff5221 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFA534), color-stop(100%, #ff5221));
+  background: -webkit-linear-gradient(top, #FFA534 0%, #ff5221 100%);
+  background: -o-linear-gradient(top, #FFA534 0%, #ff5221 100%);
+  background: -ms-linear-gradient(top, #FFA534 0%, #ff5221 100%);
+  background: linear-gradient(to bottom, #FFA534 0%, #ff5221 100%);
+  background-size: 150% 150%;
+}
+
+/* line 218, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar[data-color="red"]:after,
+body > .navbar-collapse[data-color="red"]:after {
+  background: #FB404B;
+  background: -moz-linear-gradient(top, #FB404B 0%, #bb0502 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FB404B), color-stop(100%, #bb0502));
+  background: -webkit-linear-gradient(top, #FB404B 0%, #bb0502 100%);
+  background: -o-linear-gradient(top, #FB404B 0%, #bb0502 100%);
+  background: -ms-linear-gradient(top, #FB404B 0%, #bb0502 100%);
+  background: linear-gradient(to bottom, #FB404B 0%, #bb0502 100%);
+  background-size: 150% 150%;
+}
+
+/* line 221, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar[data-color="purple"]:after,
+body > .navbar-collapse[data-color="purple"]:after {
+  background: #9368E9;
+  background: -moz-linear-gradient(top, #9368E9 0%, #943bea 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9368E9), color-stop(100%, #943bea));
+  background: -webkit-linear-gradient(top, #9368E9 0%, #943bea 100%);
+  background: -o-linear-gradient(top, #9368E9 0%, #943bea 100%);
+  background: -ms-linear-gradient(top, #9368E9 0%, #943bea 100%);
+  background: linear-gradient(to bottom, #9368E9 0%, #943bea 100%);
+  background-size: 150% 150%;
+}
+
+/* line 227, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.main-panel {
+  background: rgba(203, 203, 210, 0.15);
+  position: relative;
+  z-index: 2;
+  float: right;
+  width: calc(100% - 260px);
+  min-height: 100%;
+}
+
+/* line 235, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.main-panel > .content {
+  padding: 30px 15px;
+  min-height: calc(100% - 123px);
+}
+
+/* line 240, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.main-panel > .footer {
+  border-top: 1px solid #e7e7e7;
+}
+
+/* line 244, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.main-panel .navbar {
+  margin-bottom: 0;
+}
+
+/* line 249, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_sidebar-and-main-panel.scss */
+.sidebar,
+.main-panel {
+  overflow: auto;
+  max-height: 100%;
+  height: 100%;
+  -webkit-transition-property: top,bottom;
+  transition-property: top,bottom;
+  -webkit-transition-duration: .2s,.2s;
+  transition-duration: .2s,.2s;
+  -webkit-transition-timing-function: linear,linear;
+  transition-timing-function: linear,linear;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn {
+  border-width: 2px;
+  background-color: transparent;
+  font-weight: 400;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  padding: 8px 16px;
+  border-color: #888888;
+  color: #888888;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn:hover, .btn:focus, .btn:active, .btn.active,
+.open > .btn.dropdown-toggle {
+  background-color: transparent;
+  color: #777777;
+  border-color: #777777;
+}
+
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn.disabled, .btn.disabled:hover, .btn.disabled:focus, .btn.disabled.focus, .btn.disabled:active, .btn.disabled.active, .btn:disabled, .btn:disabled:hover, .btn:disabled:focus, .btn:disabled.focus, .btn:disabled:active, .btn:disabled.active, .btn[disabled], .btn[disabled]:hover, .btn[disabled]:focus, .btn[disabled].focus, .btn[disabled]:active, .btn[disabled].active,
+fieldset[disabled] .btn,
+fieldset[disabled] .btn:hover,
+fieldset[disabled] .btn:focus,
+fieldset[disabled] .btn.focus,
+fieldset[disabled] .btn:active,
+fieldset[disabled] .btn.active {
+  background-color: transparent;
+  border-color: #888888;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn.btn-fill {
+  color: #FFFFFF;
+  background-color: #888888;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn.btn-fill:hover, .btn.btn-fill:focus, .btn.btn-fill:active, .btn.btn-fill.active,
+.open > .btn.btn-fill.dropdown-toggle {
+  background-color: #777777;
+  color: #FFFFFF;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn.btn-fill .caret {
+  border-top-color: #FFFFFF;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn .caret {
+  border-top-color: #888888;
+}
+
+/* line 11, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn:hover, .btn:focus {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  outline: 0 !important;
+}
+
+/* line 16, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn:active, .btn.active,
+.open > .btn.dropdown-toggle {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0 !important;
+}
+
+/* line 23, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn.btn-icon {
+  padding: 8px;
+}
+
+/* line 31, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-primary {
+  border-color: #3472F7;
+  color: #3472F7;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+  background-color: transparent;
+  color: #1D62F0;
+  border-color: #1D62F0;
+}
+
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary:disabled, .btn-primary:disabled:hover, .btn-primary:disabled:focus, .btn-primary:disabled.focus, .btn-primary:disabled:active, .btn-primary:disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled].active,
+fieldset[disabled] .btn-primary,
+fieldset[disabled] .btn-primary:hover,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary.focus,
+fieldset[disabled] .btn-primary:active,
+fieldset[disabled] .btn-primary.active {
+  background-color: transparent;
+  border-color: #3472F7;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-primary.btn-fill {
+  color: #FFFFFF;
+  background-color: #3472F7;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-primary.btn-fill:hover, .btn-primary.btn-fill:focus, .btn-primary.btn-fill:active, .btn-primary.btn-fill.active,
+.open > .btn-primary.btn-fill.dropdown-toggle {
+  background-color: #1D62F0;
+  color: #FFFFFF;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-primary.btn-fill .caret {
+  border-top-color: #FFFFFF;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-primary .caret {
+  border-top-color: #3472F7;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-success {
+  border-color: #87CB16;
+  color: #87CB16;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active,
+.open > .btn-success.dropdown-toggle {
+  background-color: transparent;
+  color: #049F0C;
+  border-color: #049F0C;
+}
+
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled.focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success:disabled, .btn-success:disabled:hover, .btn-success:disabled:focus, .btn-success:disabled.focus, .btn-success:disabled:active, .btn-success:disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled].focus, .btn-success[disabled]:active, .btn-success[disabled].active,
+fieldset[disabled] .btn-success,
+fieldset[disabled] .btn-success:hover,
+fieldset[disabled] .btn-success:focus,
+fieldset[disabled] .btn-success.focus,
+fieldset[disabled] .btn-success:active,
+fieldset[disabled] .btn-success.active {
+  background-color: transparent;
+  border-color: #87CB16;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-success.btn-fill {
+  color: #FFFFFF;
+  background-color: #87CB16;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-success.btn-fill:hover, .btn-success.btn-fill:focus, .btn-success.btn-fill:active, .btn-success.btn-fill.active,
+.open > .btn-success.btn-fill.dropdown-toggle {
+  background-color: #049F0C;
+  color: #FFFFFF;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-success.btn-fill .caret {
+  border-top-color: #FFFFFF;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-success .caret {
+  border-top-color: #87CB16;
+}
+
+/* line 33, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-info {
+  border-color: #1DC7EA;
+  color: #1DC7EA;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active,
+.open > .btn-info.dropdown-toggle {
+  background-color: transparent;
+  color: #42d0ed;
+  border-color: #42d0ed;
+}
+
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled.focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info:disabled, .btn-info:disabled:hover, .btn-info:disabled:focus, .btn-info:disabled.focus, .btn-info:disabled:active, .btn-info:disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled].focus, .btn-info[disabled]:active, .btn-info[disabled].active,
+fieldset[disabled] .btn-info,
+fieldset[disabled] .btn-info:hover,
+fieldset[disabled] .btn-info:focus,
+fieldset[disabled] .btn-info.focus,
+fieldset[disabled] .btn-info:active,
+fieldset[disabled] .btn-info.active {
+  background-color: transparent;
+  border-color: #1DC7EA;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-info.btn-fill {
+  color: #FFFFFF;
+  background-color: #1DC7EA;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-info.btn-fill:hover, .btn-info.btn-fill:focus, .btn-info.btn-fill:active, .btn-info.btn-fill.active,
+.open > .btn-info.btn-fill.dropdown-toggle {
+  background-color: #42d0ed;
+  color: #FFFFFF;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-info.btn-fill .caret {
+  border-top-color: #FFFFFF;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-info .caret {
+  border-top-color: #1DC7EA;
+}
+
+/* line 34, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-warning {
+  border-color: #FF9500;
+  color: #FF9500;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active,
+.open > .btn-warning.dropdown-toggle {
+  background-color: transparent;
+  color: #ED8D00;
+  border-color: #ED8D00;
+}
+
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled.focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning:disabled, .btn-warning:disabled:hover, .btn-warning:disabled:focus, .btn-warning:disabled.focus, .btn-warning:disabled:active, .btn-warning:disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled].focus, .btn-warning[disabled]:active, .btn-warning[disabled].active,
+fieldset[disabled] .btn-warning,
+fieldset[disabled] .btn-warning:hover,
+fieldset[disabled] .btn-warning:focus,
+fieldset[disabled] .btn-warning.focus,
+fieldset[disabled] .btn-warning:active,
+fieldset[disabled] .btn-warning.active {
+  background-color: transparent;
+  border-color: #FF9500;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-warning.btn-fill {
+  color: #FFFFFF;
+  background-color: #FF9500;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-warning.btn-fill:hover, .btn-warning.btn-fill:focus, .btn-warning.btn-fill:active, .btn-warning.btn-fill.active,
+.open > .btn-warning.btn-fill.dropdown-toggle {
+  background-color: #ED8D00;
+  color: #FFFFFF;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-warning.btn-fill .caret {
+  border-top-color: #FFFFFF;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-warning .caret {
+  border-top-color: #FF9500;
+}
+
+/* line 35, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-danger {
+  border-color: #FF4A55;
+  color: #FF4A55;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active,
+.open > .btn-danger.dropdown-toggle {
+  background-color: transparent;
+  color: #EE2D20;
+  border-color: #EE2D20;
+}
+
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled.focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger:disabled, .btn-danger:disabled:hover, .btn-danger:disabled:focus, .btn-danger:disabled.focus, .btn-danger:disabled:active, .btn-danger:disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled].focus, .btn-danger[disabled]:active, .btn-danger[disabled].active,
+fieldset[disabled] .btn-danger,
+fieldset[disabled] .btn-danger:hover,
+fieldset[disabled] .btn-danger:focus,
+fieldset[disabled] .btn-danger.focus,
+fieldset[disabled] .btn-danger:active,
+fieldset[disabled] .btn-danger.active {
+  background-color: transparent;
+  border-color: #FF4A55;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-danger.btn-fill {
+  color: #FFFFFF;
+  background-color: #FF4A55;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-danger.btn-fill:hover, .btn-danger.btn-fill:focus, .btn-danger.btn-fill:active, .btn-danger.btn-fill.active,
+.open > .btn-danger.btn-fill.dropdown-toggle {
+  background-color: #EE2D20;
+  color: #FFFFFF;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-danger.btn-fill .caret {
+  border-top-color: #FFFFFF;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-danger .caret {
+  border-top-color: #FF4A55;
+}
+
+/* line 36, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-neutral {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-neutral:hover, .btn-neutral:focus, .btn-neutral:active, .btn-neutral.active,
+.open > .btn-neutral.dropdown-toggle {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-neutral.disabled, .btn-neutral.disabled:hover, .btn-neutral.disabled:focus, .btn-neutral.disabled.focus, .btn-neutral.disabled:active, .btn-neutral.disabled.active, .btn-neutral:disabled, .btn-neutral:disabled:hover, .btn-neutral:disabled:focus, .btn-neutral:disabled.focus, .btn-neutral:disabled:active, .btn-neutral:disabled.active, .btn-neutral[disabled], .btn-neutral[disabled]:hover, .btn-neutral[disabled]:focus, .btn-neutral[disabled].focus, .btn-neutral[disabled]:active, .btn-neutral[disabled].active,
+fieldset[disabled] .btn-neutral,
+fieldset[disabled] .btn-neutral:hover,
+fieldset[disabled] .btn-neutral:focus,
+fieldset[disabled] .btn-neutral.focus,
+fieldset[disabled] .btn-neutral:active,
+fieldset[disabled] .btn-neutral.active {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+/* line 32, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-neutral.btn-fill {
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-neutral.btn-fill:hover, .btn-neutral.btn-fill:focus, .btn-neutral.btn-fill:active, .btn-neutral.btn-fill.active,
+.open > .btn-neutral.btn-fill.dropdown-toggle {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-neutral.btn-fill .caret {
+  border-top-color: #FFFFFF;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-neutral .caret {
+  border-top-color: #FFFFFF;
+}
+
+/* line 39, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-neutral:active, .btn-neutral.active,
+.open > .btn-neutral.dropdown-toggle {
+  background-color: #FFFFFF;
+  color: #888888;
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-neutral.btn-fill, .btn-neutral.btn-fill:hover, .btn-neutral.btn-fill:focus {
+  color: #888888;
+}
+
+/* line 52, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-neutral.btn-simple:active, .btn-neutral.btn-simple.active {
+  background-color: transparent;
+}
+
+/* line 59, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn:disabled, .btn[disabled], .btn.disabled {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+/* line 65, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-round {
+  border-width: 1px;
+  border-radius: 30px !important;
+  padding: 9px 18px;
+}
+
+/* line 70, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-round.btn-icon {
+  padding: 9px;
+}
+
+/* line 74, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-simple {
+  border: 0;
+  font-size: 16px;
+  padding: 8px 16px;
+}
+
+/* line 79, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-simple.btn-icon {
+  padding: 8px;
+}
+
+/* line 83, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-lg {
+  font-size: 18px;
+  border-radius: 6px;
+  padding: 14px 30px;
+  font-weight: 400;
+}
+
+/* line 62, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-lg.btn-round {
+  padding: 15px 30px;
+}
+
+/* line 66, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-lg.btn-simple {
+  padding: 16px 30px;
+}
+
+/* line 87, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-sm {
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+/* line 62, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-sm.btn-round {
+  padding: 6px 10px;
+}
+
+/* line 66, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-sm.btn-simple {
+  padding: 7px 10px;
+}
+
+/* line 90, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-xs {
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+/* line 62, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-xs.btn-round {
+  padding: 2px 5px;
+}
+
+/* line 66, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/mixins/_buttons.scss */
+.btn-xs.btn-simple {
+  padding: 3px 5px;
+}
+
+/* line 93, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-wd {
+  min-width: 140px;
+}
+
+/* line 97, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-group.select {
+  width: 100%;
+}
+
+/* line 100, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-group.select .btn {
+  text-align: left;
+}
+
+/* line 103, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_buttons.scss */
+.btn-group.select .caret {
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  right: 8px;
+}
+
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control::-moz-placeholder {
+  color: #DDDDDD;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 4, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control:-moz-placeholder {
+  color: #DDDDDD;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 7, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control::-webkit-input-placeholder {
+  color: #DDDDDD;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 10, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control:-ms-input-placeholder {
+  color: #DDDDDD;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 14, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E3E3;
+  border-radius: 4px;
+  color: #565656;
+  padding: 8px 12px;
+  height: 40px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 22, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control:focus {
+  background-color: #FFFFFF;
+  border: 1px solid #AAAAAA;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0 !important;
+  color: #333333;
+}
+
+/* line 30, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-success .form-control,
+.has-error .form-control,
+.has-success .form-control:focus,
+.has-error .form-control:focus {
+  border-color: #E3E3E3;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 38, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-success .form-control {
+  color: #87CB16;
+}
+
+/* line 41, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-success .form-control:focus {
+  border-color: #87CB16;
+}
+
+/* line 44, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-error .form-control {
+  color: #FF4A55;
+}
+
+/* line 47, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-error .form-control:focus {
+  border-color: #FF4A55;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control + .form-control-feedback {
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: -7px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  vertical-align: middle;
+}
+
+/* line 61, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.open .form-control {
+  border-radius: 4px 4px 0 0;
+  border-bottom-color: transparent;
+}
+
+/* line 67, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.input-lg {
+  height: 55px;
+  padding: 14px 30px;
+}
+
+/* line 73, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-error .form-control-feedback {
+  color: #FF4A55;
+}
+
+/* line 78, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-success .form-control-feedback {
+  color: #87CB16;
+}
+
+/* line 84, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.input-group-addon {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E3E3;
+  border-radius: 4px;
+}
+
+/* line 89, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-success .input-group-addon,
+.has-error .input-group-addon {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E3E3;
+}
+
+/* line 94, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-error .form-control:focus + .input-group-addon {
+  border-color: #FF4A55;
+  color: #FF4A55;
+}
+
+/* line 98, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.has-success .form-control:focus + .input-group-addon {
+  border-color: #87CB16;
+  color: #87CB16;
+}
+
+/* line 102, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control:focus + .input-group-addon,
+.form-control:focus ~ .input-group-addon {
+  background-color: #FFFFFF;
+  border-color: #9A9A9A;
+}
+
+/* line 109, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-right: 0 none;
+}
+
+/* line 115, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child) {
+  border-left: 0 none;
+}
+
+/* line 121, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: #F5F5F5;
+  color: #888888;
+  cursor: not-allowed;
+}
+
+/* line 127, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.input-group-btn .btn {
+  border-width: 1px;
+  padding: 9px 16px;
+}
+
+/* line 131, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.input-group-btn .btn-default:not(.btn-fill) {
+  border-color: #DDDDDD;
+}
+
+/* line 135, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.input-group-btn:last-child > .btn {
+  margin-left: 0;
+}
+
+/* line 139, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_inputs.scss */
+.input-group-focus .input-group-addon {
+  border-color: #9A9A9A;
+}
+
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert {
+  border: 0;
+  border-radius: 0;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+/* line 8, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.container .alert {
+  border-radius: 4px;
+}
+
+/* line 12, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.navbar .alert {
+  border-radius: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 85px;
+  width: 100%;
+  z-index: 3;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.navbar:not(.navbar-transparent) .alert {
+  top: 70px;
+}
+
+/* line 25, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert span[data-notify="icon"] {
+  font-size: 30px;
+  display: block;
+  left: 15px;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+
+/* line 34, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert button.close {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -13px;
+  z-index: 1033;
+  background-color: #FFFFFF;
+  display: block;
+  border-radius: 50%;
+  opacity: .4;
+  line-height: 11px;
+  width: 25px;
+  height: 25px;
+  outline: 0 !important;
+  text-align: center;
+  padding: 3px;
+  font-weight: 300;
+}
+
+/* line 52, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert button.close:hover {
+  opacity: .55;
+}
+
+/* line 57, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert .close ~ span {
+  display: block;
+  max-width: 89%;
+}
+
+/* line 62, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert[data-notify="container"] {
+  padding: 10px 10px 10px 20px;
+  border-radius: 4px;
+}
+
+/* line 67, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert.alert-with-icon {
+  padding-left: 65px;
+}
+
+/* line 71, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert-info {
+  background-color: #14233c;
+}
+
+/* line 74, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert-success {
+  background-color: #a1e82c;
+}
+
+/* line 77, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert-warning {
+  background-color: #ffbc67;
+}
+
+/* line 80, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_alerts.scss */
+.alert-danger {
+  background-color: #fc727a;
+}
+
+/* line 3, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table .radio,
+.table .checkbox {
+  position: relative;
+  height: 20px;
+  display: block;
+  width: 20px;
+  padding: 0px 0px;
+  margin: 0px 5px;
+  text-align: center;
+}
+
+/* line 13, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table .radio .icons,
+.table .checkbox .icons {
+  left: 5px;
+}
+
+/* line 17, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 12px 8px;
+  vertical-align: middle;
+}
+
+/* line 27, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table > thead > tr > th {
+  border-bottom-width: 1px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #9A9A9A;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+/* line 36, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table .td-actions .btn {
+  opacity: 0.36;
+  filter: alpha(opacity=36);
+}
+
+/* line 39, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table .td-actions .btn.btn-xs {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/* line 44, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table .td-actions {
+  min-width: 90px;
+}
+
+/* line 48, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table > tbody > tr {
+  position: relative;
+}
+
+/* line 52, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_tables.scss */
+.table > tbody > tr:hover .td-actions .btn {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/*      Checkbox and radio         */
+/* line 2, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox,
+.radio {
+  margin-bottom: 12px;
+  padding-left: 32px;
+  position: relative;
+  -webkit-transition: color 0.25s linear;
+  transition: color 0.25s linear;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333333;
+}
+
+/* line 14, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox input,
+.radio input {
+  outline: none !important;
+  display: none;
+}
+
+/* line 19, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox .icons,
+.radio .icons {
+  color: #DDDDDD;
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20px;
+  text-align: center;
+  line-height: 21px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox .icons .first-icon,
+.radio .icons .first-icon,
+.checkbox .icons .second-icon,
+.radio .icons .second-icon {
+  display: inline-table;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  margin: 0;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 49, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox .icons .second-icon,
+.radio .icons .second-icon {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 53, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox:hover,
+.radio:hover {
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+/* line 58, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox:hover .first-icon,
+.radio:hover .first-icon {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 62, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox:hover .second-icon,
+.radio:hover .second-icon {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 66, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.checked,
+.radio.checked {
+  color: #1DC7EA;
+}
+
+/* line 70, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.checked .first-icon,
+.radio.checked .first-icon {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 75, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.checked .second-icon,
+.radio.checked .second-icon {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  color: #1DC7EA;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+/* line 83, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.disabled,
+.radio.disabled {
+  cursor: default;
+  color: #DDDDDD !important;
+}
+
+/* line 88, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.disabled .icons,
+.radio.disabled .icons {
+  color: #DDDDDD !important;
+}
+
+/* line 92, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.disabled .first-icon,
+.radio.disabled .first-icon {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 97, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.disabled .second-icon,
+.radio.disabled .second-icon {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 102, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.disabled.checked .icons,
+.radio.disabled.checked .icons {
+  color: #DDDDDD;
+}
+
+/* line 106, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.disabled.checked .first-icon,
+.radio.disabled.checked .first-icon {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 111, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.checkbox.disabled.checked .second-icon,
+.radio.disabled.checked .second-icon {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  color: #D9D9D9;
+}
+
+/* ============================================================
+ * bootstrapSwitch v1.3 by Larentis Mattia @spiritualGuru
+ * http://www.larentis.eu/switch/
+ * ============================================================
+ * Licensed under the Apache License, Version 2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * ============================================================ */
+/* line 127, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch {
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.72222;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  width: 60px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  /*   this code is for fixing safari bug with hidden overflow for border-radius   */
+  -webkit-mask: url("../img/mask.png") 0 0 no-repeat;
+  -webkit-mask-size: 60px 24px;
+  mask: url("../img/mask.png") 0 0 no-repeat;
+}
+
+/* line 148, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch.deactivate {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default !important;
+}
+
+/* line 153, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch.deactivate label,
+.has-switch.deactivate span {
+  cursor: default !important;
+}
+
+/* line 157, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch > div {
+  position: relative;
+  top: 0;
+  width: 100px;
+}
+
+/* line 162, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch > div.switch-animate {
+  -webkit-transition: left 0.25s ease-out;
+  transition: left 0.25s ease-out;
+}
+
+/* line 166, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch > div.switch-off {
+  left: -35px;
+}
+
+/* line 170, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch > div.switch-on {
+  left: 0;
+}
+
+/* line 173, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch > div label {
+  background-color: #FFFFFF;
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, #f1f1f2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f1f1f2));
+  background: -webkit-linear-gradient(top, white 0%, #f1f1f2 100%);
+  background: -o-linear-gradient(top, white 0%, #f1f1f2 100%);
+  background: -ms-linear-gradient(top, white 0%, #f1f1f2 100%);
+  background: linear-gradient(to bottom, white 0%, #f1f1f2 100%);
+  background-size: 150% 150%;
+  box-shadow: 0 1px 1px #FFFFFF inset, 0 1px 1px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+/* line 180, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch input[type=checkbox] {
+  display: none;
+}
+
+/* line 183, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch span {
+  /*     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset; */
+  cursor: pointer;
+  float: left;
+  font-size: 11px;
+  font-weight: 400;
+  height: 24px;
+  line-height: 15px;
+  margin: 0;
+  padding-bottom: 6px;
+  padding-top: 5px;
+  position: relative;
+  text-align: center;
+  text-indent: -10px;
+  width: 50%;
+  z-index: 1;
+  -webkit-transition: 0.25s ease-out;
+  transition: 0.25s ease-out;
+}
+
+/* line 202, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch span.switch-left {
+  background-color: #1DC7EA;
+  border-left: 1px solid transparent;
+  border-radius: 30px 0 0 30px;
+  color: #FFFFFF;
+}
+
+/* line 208, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch .switch-off span.switch-left {
+  background-color: #DDDDDD;
+}
+
+/* line 211, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch span.switch-right {
+  border-radius: 0 30px 30px 0;
+  background-color: #1DC7EA;
+  color: #ffffff;
+  text-indent: 1px;
+}
+
+/* line 217, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch .switch-off span.switch-right {
+  background-color: #DDDDDD;
+}
+
+/* line 221, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch label {
+  border-radius: 12px;
+  float: left;
+  height: 22px;
+  margin: 1px -13px;
+  padding: 0;
+  position: relative;
+  transition: all 0.25s ease-out 0s;
+  vertical-align: middle;
+  width: 22px;
+  z-index: 100;
+  -webkit-transition: 0.25s ease-out;
+  transition: 0.25s ease-out;
+}
+
+/* line 235, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch .switch-on .fa-check:before {
+  margin-left: 10px;
+}
+
+/* line 238, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch:hover .switch-on label {
+  margin: 1px -17px;
+  width: 26px;
+}
+
+/* line 242, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_checkbox-radio-switch.scss */
+.has-switch:hover .switch-off label {
+  margin: 1px -13px;
+  width: 26px;
+}
+
+/* line 3, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
+}
+
+/* line 9, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar {
+  border: 0;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+/* line 14, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar .navbar-brand {
+  font-weight: 400;
+  margin: 5px 0px;
+  padding: 15px 15px;
+  font-size: 20px;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar .navbar-nav > li > a {
+  padding: 10px 15px;
+  margin: 10px 3px;
+  position: relative;
+}
+
+/* line 26, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar .navbar-nav > li > a.btn {
+  margin: 15px 3px;
+  padding: 8px 16px;
+}
+
+/* line 30, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar .navbar-nav > li > a.btn-round {
+  margin: 16px 3px;
+}
+
+/* line 33, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar .navbar-nav > li > a [class^="fa"] {
+  font-size: 19px;
+  position: relative;
+  line-height: 16px;
+  top: 1px;
+}
+
+/* line 40, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar .navbar-nav .notification {
+  position: absolute;
+  background-color: #FB404B;
+  text-align: center;
+  border-radius: 10px;
+  min-width: 18px;
+  padding: 0 5px;
+  height: 18px;
+  font-size: 12px;
+  color: #FFFFFF;
+  font-weight: bold;
+  line-height: 18px;
+  top: 0px;
+  left: 7px;
+}
+
+/* line 56, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar .btn {
+  margin: 15px 3px;
+  font-size: 14px;
+}
+
+/* line 60, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar .btn-simple {
+  font-size: 16px;
+}
+
+/* line 67, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar.fixed {
+  width: calc(100% - $sidebar-width);
+  right: 0;
+  left: auto;
+  border-radius: 0;
+}
+
+/* line 76, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-nav > li > .dropdown-menu {
+  border-radius: 10px;
+  margin-top: -5px;
+}
+
+/* line 82, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .navbar-brand, [class*="navbar-ct"] .navbar-brand {
+  color: #FFFFFF;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+/* line 86, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .navbar-brand:focus, .navbar-transparent .navbar-brand:hover, [class*="navbar-ct"] .navbar-brand:focus, [class*="navbar-ct"] .navbar-brand:hover {
+  background-color: transparent;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 94, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .navbar-nav > li > a:not(.btn), [class*="navbar-ct"] .navbar-nav > li > a:not(.btn) {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+/* line 99, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .navbar-nav > .active > a:not(.btn),
+.navbar-transparent .navbar-nav > .active > a:hover:not(.btn),
+.navbar-transparent .navbar-nav > .active > a:focus:not(.btn),
+.navbar-transparent .navbar-nav > li > a:hover:not(.btn),
+.navbar-transparent .navbar-nav > li > a:focus:not(.btn), [class*="navbar-ct"] .navbar-nav > .active > a:not(.btn),
+[class*="navbar-ct"] .navbar-nav > .active > a:hover:not(.btn),
+[class*="navbar-ct"] .navbar-nav > .active > a:focus:not(.btn),
+[class*="navbar-ct"] .navbar-nav > li > a:hover:not(.btn),
+[class*="navbar-ct"] .navbar-nav > li > a:focus:not(.btn) {
+  background-color: transparent;
+  border-radius: 3px;
+  color: #FFFFFF;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 109, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .navbar-nav .nav > li > a.btn:hover, [class*="navbar-ct"] .navbar-nav .nav > li > a.btn:hover {
+  background-color: transparent;
+}
+
+/* line 113, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .navbar-nav > .dropdown > a .caret,
+.navbar-transparent .navbar-nav > .dropdown > a:hover .caret,
+.navbar-transparent .navbar-nav > .dropdown > a:focus .caret, [class*="navbar-ct"] .navbar-nav > .dropdown > a .caret,
+[class*="navbar-ct"] .navbar-nav > .dropdown > a:hover .caret,
+[class*="navbar-ct"] .navbar-nav > .dropdown > a:focus .caret {
+  border-bottom-color: #FFFFFF;
+  border-top-color: #FFFFFF;
+}
+
+/* line 120, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .navbar-nav > .open > a,
+.navbar-transparent .navbar-nav > .open > a:hover,
+.navbar-transparent .navbar-nav > .open > a:focus, [class*="navbar-ct"] .navbar-nav > .open > a,
+[class*="navbar-ct"] .navbar-nav > .open > a:hover,
+[class*="navbar-ct"] .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #FFFFFF;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 129, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .btn-default, [class*="navbar-ct"] .btn-default {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* line 133, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .btn-default.btn-fill, [class*="navbar-ct"] .btn-default.btn-fill {
+  color: #9A9A9A;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+/* line 138, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .btn-default.btn-fill:hover,
+.navbar-transparent .btn-default.btn-fill:focus,
+.navbar-transparent .btn-default.btn-fill:active,
+.navbar-transparent .btn-default.btn-fill.active,
+.navbar-transparent .open .dropdown-toggle.btn-fill.btn-default, [class*="navbar-ct"] .btn-default.btn-fill:hover,
+[class*="navbar-ct"] .btn-default.btn-fill:focus,
+[class*="navbar-ct"] .btn-default.btn-fill:active,
+[class*="navbar-ct"] .btn-default.btn-fill.active,
+[class*="navbar-ct"] .open .dropdown-toggle.btn-fill.btn-default {
+  border-color: #FFFFFF;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 149, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .dropdown-menu .divider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* line 154, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.nav-open .nav .caret {
+  border-bottom-color: #FFFFFF;
+  border-top-color: #FFFFFF;
+}
+
+/* line 159, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-default {
+  background-color: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* line 164, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-default .navbar-nav > li > a:not(.btn) {
+  color: #9A9A9A;
+}
+
+/* line 168, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:not(.btn):hover,
+.navbar-default .navbar-nav > .active > a:not(.btn):focus,
+.navbar-default .navbar-nav > li > a:not(.btn):hover,
+.navbar-default .navbar-nav > li > a:not(.btn):focus {
+  background-color: transparent;
+  border-radius: 3px;
+  color: #1DC7EA;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 179, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+  border-bottom-color: #1DC7EA;
+  border-top-color: #1DC7EA;
+}
+
+/* line 186, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #1DC7EA;
+}
+
+/* line 193, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-default .navbar-nav .navbar-toggle:hover, .navbar-default .navbar-nav .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+/* line 199, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-default:not(.navbar-transparent) .btn-default:hover {
+  color: #1DC7EA;
+  border-color: #1DC7EA;
+}
+
+/* line 203, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-default:not(.navbar-transparent) .btn-neutral,
+.navbar-default:not(.navbar-transparent) .btn-neutral:hover,
+.navbar-default:not(.navbar-transparent) .btn-neutral:active {
+  color: #9A9A9A;
+}
+
+/*      Navbar with icons            */
+/* line 213, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-icons.navbar .navbar-brand {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* line 218, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-icons .navbar-nav > li > a {
+  text-align: center;
+  padding: 6px 15px;
+  margin: 6px 3px;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-icons .navbar-nav [class^="pe"] {
+  font-size: 30px;
+  position: relative;
+}
+
+/* line 228, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-icons .navbar-nav p {
+  margin: 3px 0 0;
+}
+
+/* line 234, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-form {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 236, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-form .form-control {
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 22px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #E3E3E3;
+}
+
+/* line 243, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent .navbar-form .form-control,
+[class*="navbar-ct"] .navbar-form .form-control {
+  color: #FFFFFF;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* line 252, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-ct-blue {
+  background-color: #4091e2;
+}
+
+/* line 255, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-ct-azure {
+  background-color: #14233c;
+}
+
+/* line 258, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-ct-green {
+  background-color: #a1e82c;
+}
+
+/* line 261, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-ct-orange {
+  background-color: #ffbc67;
+}
+
+/* line 264, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-ct-red {
+  background-color: #fc727a;
+}
+
+/* line 268, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-transparent {
+  padding-top: 15px;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* line 274, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-toggle {
+  margin-top: 19px;
+  margin-bottom: 19px;
+  border: 0;
+}
+
+/* line 279, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-toggle .icon-bar {
+  background-color: #FFFFFF;
+}
+
+/* line 282, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-toggle .navbar-collapse,
+.navbar-toggle .navbar-form {
+  border-color: transparent;
+}
+
+/* line 287, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_navbars.scss */
+.navbar-toggle.navbar-default .navbar-toggle:hover,
+.navbar-toggle.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer {
+  background-color: #FFFFFF;
+  line-height: 20px;
+}
+
+/* line 5, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* line 11, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer nav > ul a:not(.btn) {
+  color: #9A9A9A;
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer nav > ul a:not(.btn):hover, .footer nav > ul a:not(.btn):focus {
+  color: #777777;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer .social-area {
+  padding: 15px 0;
+}
+
+/* line 23, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer .social-area h5 {
+  padding-bottom: 15px;
+}
+
+/* line 27, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer .social-area > a:not(.btn) {
+  color: #9A9A9A;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 5px;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* line 36, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer .social-area > a:not(.btn):hover, .footer .social-area > a:not(.btn):focus {
+  color: #777777;
+}
+
+/* line 41, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer .copyright {
+  color: #777777;
+  padding: 10px 15px;
+  margin: 10px 3px;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+/* line 48, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer hr {
+  border-color: #DDDDDD;
+}
+
+/* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer .title {
+  color: #777777;
+}
+
+/* line 56, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer-default {
+  background-color: #F5F5F5;
+}
+
+/* line 61, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer:not(.footer-big) nav > ul {
+  font-size: 14px;
+}
+
+/* line 63, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer:not(.footer-big) nav > ul li {
+  margin-left: 20px;
+  float: left;
+}
+
+/* line 67, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_footers.scss */
+.footer:not(.footer-big) nav > ul a {
+  padding: 10px 0px;
+  margin: 10px 10px 10px 0px;
+}
+
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  display: block;
+  z-index: 9000;
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.125);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.125);
+}
+
+/* line 13, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.open .dropdown-menu {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  visibility: visible;
+}
+
+/* line 17, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.select .dropdown-menu {
+  border-radius: 0 0 10px 10px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transform-origin: 50% -40px;
+  -moz-transform-origin: 50% -40px;
+  -o-transform-origin: 50% -40px;
+  -ms-transform-origin: 50% -40px;
+  transform-origin: 50% -40px;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 150ms linear;
+  -moz-transition: all 150ms linear;
+  -o-transition: all 150ms linear;
+  -ms-transition: all 150ms linear;
+  transition: all 150ms linear;
+  margin-top: -20px;
+}
+
+/* line 25, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.select.open .dropdown-menu {
+  margin-top: -1px;
+}
+
+/* line 29, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu > li > a {
+  padding: 8px 16px;
+  color: #333333;
+}
+
+/* line 33, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu > li > a img {
+  margin-top: -3px;
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu > li > a:focus {
+  outline: 0 !important;
+}
+
+/* line 41, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.btn-group.select .dropdown-menu {
+  min-width: 100%;
+}
+
+/* line 45, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu > li:first-child > a {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* line 50, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu > li:last-child > a {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* line 55, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.select .dropdown-menu > li:first-child > a {
+  border-radius: 0;
+  border-bottom: 0 none;
+}
+
+/* line 60, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: #F5F5F5;
+  color: #333333;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 68, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu.dropdown-blue > li > a:hover,
+.dropdown-menu.dropdown-blue > li > a:focus {
+  background-color: rgba(52, 114, 247, 0.2);
+}
+
+/* line 72, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu.dropdown-azure > li > a:hover,
+.dropdown-menu.dropdown-azure > li > a:focus {
+  background-color: rgba(29, 199, 234, 0.2);
+}
+
+/* line 76, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu.ct-green > li > a:hover,
+.dropdown-menu.ct-green > li > a:focus {
+  background-color: rgba(135, 203, 22, 0.2);
+}
+
+/* line 80, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu.dropdown-orange > li > a:hover,
+.dropdown-menu.dropdown-orange > li > a:focus {
+  background-color: rgba(255, 149, 0, 0.2);
+}
+
+/* line 84, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-menu.dropdown-red > li > a:hover,
+.dropdown-menu.dropdown-red > li > a:focus {
+  background-color: rgba(255, 74, 85, 0.2);
+}
+
+/* line 92, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-with-icons > li > a {
+  padding-left: 0px;
+  line-height: 28px;
+}
+
+/* line 96, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-with-icons i {
+  text-align: center;
+  line-height: 28px;
+  float: left;
+}
+
+/* line 101, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-with-icons i[class^="pe-"] {
+  font-size: 24px;
+  width: 46px;
+}
+
+/* line 105, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.dropdown-with-icons i[class^="fa"] {
+  font-size: 14px;
+  width: 38px;
+}
+
+/* line 113, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.btn-group.select {
+  overflow: hidden;
+}
+
+/* line 116, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_dropdown.scss */
+.btn-group.select.open {
+  overflow: visible;
+}
+
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card {
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+/* line 7, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .image {
+  width: 100%;
+  overflow: hidden;
+  height: 260px;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 17, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .image img {
+  width: 100%;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .filter {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.68);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 33, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .filter .btn {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 37, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card:hover .filter {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 40, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .btn-hover {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 43, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card:hover .btn-hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 46, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .content {
+  padding: 15px 15px 10px 15px;
+}
+
+/* line 49, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .header {
+  padding: 15px 15px 0;
+}
+
+/* line 52, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .category,
+.card label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9A9A9A;
+  margin-bottom: 0px;
+}
+
+/* line 59, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .category i,
+.card label i {
+  font-size: 16px;
+}
+
+/* line 64, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card label {
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* line 70, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .title {
+  margin: 0;
+  color: #333333;
+  font-weight: 300;
+}
+
+/* line 75, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .avatar {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* line 82, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .description {
+  font-size: 14px;
+  color: #333;
+}
+
+/* line 86, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .footer {
+  padding: 0;
+  background-color: transparent;
+  line-height: 30px;
+}
+
+/* line 91, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .footer .legend {
+  padding: 5px 0;
+}
+
+/* line 95, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .footer hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* line 100, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .stats {
+  color: #a9a9a9;
+}
+
+/* line 103, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .footer div {
+  display: inline-block;
+}
+
+/* line 107, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .author {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* line 112, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .author i {
+  font-size: 14px;
+}
+
+/* line 115, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card h6 {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* line 119, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card.card-separator:after {
+  height: 100%;
+  right: -15px;
+  top: 0;
+  width: 1px;
+  background-color: #DDDDDD;
+  content: "";
+  position: absolute;
+}
+
+/* line 129, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .ct-chart {
+  margin: 30px 0 30px;
+  height: 245px;
+}
+
+/* line 135, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .table tbody td:first-child,
+.card .table thead th:first-child {
+  padding-left: 15px;
+}
+
+/* line 140, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .table tbody td:last-child,
+.card .table thead th:last-child {
+  padding-right: 15px;
+}
+
+/* line 146, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .alert {
+  border-radius: 4px;
+  position: relative;
+}
+
+/* line 150, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card .alert.alert-with-icon {
+  padding-left: 65px;
+}
+
+/* line 156, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user .image {
+  height: 110px;
+}
+
+/* line 159, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user .image-plain {
+  height: 0;
+  margin-top: 110px;
+}
+
+/* line 163, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user .author {
+  text-align: center;
+  text-transform: none;
+  margin-top: -70px;
+}
+
+/* line 168, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user .avatar {
+  width: 124px;
+  height: 124px;
+  border: 5px solid #FFFFFF;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+/* line 175, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user .avatar.border-gray {
+  border-color: #EEEEEE;
+}
+
+/* line 179, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user .title {
+  line-height: 24px;
+}
+
+/* line 182, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user .content {
+  min-height: 240px;
+}
+
+/* line 189, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user .footer,
+.card-price .footer {
+  padding: 5px 15px 10px;
+}
+
+/* line 192, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-user hr,
+.card-price hr {
+  margin: 5px 15px;
+}
+
+/* line 196, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-plain {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* line 201, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_cards.scss */
+.card-plain .image {
+  border-radius: 4px;
+}
+
+/* line 115, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-label {
+  fill: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* line 119, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-chart-line .ct-label,
+.ct-chart-bar .ct-label {
+  display: block;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* line 123, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-label.ct-horizontal.ct-start {
+  -webkit-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  text-anchor: start;
+}
+
+/* line 129, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-label.ct-horizontal.ct-end {
+  -webkit-box-align: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  text-anchor: start;
+}
+
+/* line 135, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-label.ct-vertical.ct-start {
+  -webkit-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: flex-end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  text-anchor: end;
+}
+
+/* line 141, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-label.ct-vertical.ct-end {
+  -webkit-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  text-anchor: start;
+}
+
+/* line 147, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-chart-bar .ct-label.ct-horizontal.ct-start {
+  -webkit-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  text-anchor: start;
+}
+
+/* line 153, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-chart-bar .ct-label.ct-horizontal.ct-end {
+  -webkit-box-align: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  text-anchor: start;
+}
+
+/* line 159, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-start {
+  -webkit-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  text-anchor: start;
+}
+
+/* line 165, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-end {
+  -webkit-box-align: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  text-anchor: start;
+}
+
+/* line 171, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-chart-bar.ct-horizontal-bars .ct-label.ct-vertical.ct-start {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: flex-end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  text-anchor: end;
+}
+
+/* line 178, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-chart-bar.ct-horizontal-bars .ct-label.ct-vertical.ct-end {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  text-anchor: end;
+}
+
+/* line 184, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-grid {
+  stroke: rgba(0, 0, 0, 0.2);
+  stroke-width: 1px;
+  stroke-dasharray: 2px;
+}
+
+/* line 188, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-point {
+  stroke-width: 8px;
+  stroke-linecap: round;
+}
+
+/* line 192, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-line {
+  fill: none;
+  stroke-width: 3px;
+}
+
+/* line 196, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-area {
+  stroke: none;
+  fill-opacity: 0.8;
+}
+
+/* line 200, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-bar {
+  fill: none;
+  stroke-width: 10px;
+}
+
+/* line 204, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-slice-donut {
+  fill: none;
+  stroke-width: 60px;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
+  stroke: #14233c;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-a .ct-slice-pie, .ct-series-a .ct-area {
+  fill: #14233c;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-b .ct-point, .ct-series-b .ct-line, .ct-series-b .ct-bar, .ct-series-b .ct-slice-donut {
+  stroke: #FB404B;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-b .ct-slice-pie, .ct-series-b .ct-area {
+  fill: #FB404B;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-c .ct-point, .ct-series-c .ct-line, .ct-series-c .ct-bar, .ct-series-c .ct-slice-donut {
+  stroke: #FFA534;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-c .ct-slice-pie, .ct-series-c .ct-area {
+  fill: #FFA534;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-d .ct-point, .ct-series-d .ct-line, .ct-series-d .ct-bar, .ct-series-d .ct-slice-donut {
+  stroke: #9368E9;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-d .ct-slice-pie, .ct-series-d .ct-area {
+  fill: #9368E9;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-e .ct-point, .ct-series-e .ct-line, .ct-series-e .ct-bar, .ct-series-e .ct-slice-donut {
+  stroke: #87CB16;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-e .ct-slice-pie, .ct-series-e .ct-area {
+  fill: #87CB16;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-f .ct-point, .ct-series-f .ct-line, .ct-series-f .ct-bar, .ct-series-f .ct-slice-donut {
+  stroke: #1F77D0;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-f .ct-slice-pie, .ct-series-f .ct-area {
+  fill: #1F77D0;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-g .ct-point, .ct-series-g .ct-line, .ct-series-g .ct-bar, .ct-series-g .ct-slice-donut {
+  stroke: #5e5e5e;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-g .ct-slice-pie, .ct-series-g .ct-area {
+  fill: #5e5e5e;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-h .ct-point, .ct-series-h .ct-line, .ct-series-h .ct-bar, .ct-series-h .ct-slice-donut {
+  stroke: #dd4b39;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-h .ct-slice-pie, .ct-series-h .ct-area {
+  fill: #dd4b39;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-i .ct-point, .ct-series-i .ct-line, .ct-series-i .ct-bar, .ct-series-i .ct-slice-donut {
+  stroke: #35465c;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-i .ct-slice-pie, .ct-series-i .ct-area {
+  fill: #35465c;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-j .ct-point, .ct-series-j .ct-line, .ct-series-j .ct-bar, .ct-series-j .ct-slice-donut {
+  stroke: #e52d27;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-j .ct-slice-pie, .ct-series-j .ct-area {
+  fill: #e52d27;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-k .ct-point, .ct-series-k .ct-line, .ct-series-k .ct-bar, .ct-series-k .ct-slice-donut {
+  stroke: #55acee;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-k .ct-slice-pie, .ct-series-k .ct-area {
+  fill: #55acee;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-l .ct-point, .ct-series-l .ct-line, .ct-series-l .ct-bar, .ct-series-l .ct-slice-donut {
+  stroke: #cc2127;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-l .ct-slice-pie, .ct-series-l .ct-area {
+  fill: #cc2127;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-m .ct-point, .ct-series-m .ct-line, .ct-series-m .ct-bar, .ct-series-m .ct-slice-donut {
+  stroke: #1769ff;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-m .ct-slice-pie, .ct-series-m .ct-area {
+  fill: #1769ff;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-n .ct-point, .ct-series-n .ct-line, .ct-series-n .ct-bar, .ct-series-n .ct-slice-donut {
+  stroke: #6188e2;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-n .ct-slice-pie, .ct-series-n .ct-area {
+  fill: #6188e2;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-o .ct-point, .ct-series-o .ct-line, .ct-series-o .ct-bar, .ct-series-o .ct-slice-donut {
+  stroke: #a748ca;
+}
+
+/* line 108, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-series-o .ct-slice-pie, .ct-series-o .ct-area {
+  fill: #a748ca;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-square {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-square:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-square:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-square > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-second {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-second:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 93.75%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-second:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-second > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-second {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-second:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 88.88889%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-second:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-second > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-third {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-third:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 83.33333%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-third:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-third > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-third {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-third:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 80%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-third:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-third > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-perfect-fourth {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-perfect-fourth:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 75%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-perfect-fourth:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-perfect-fourth > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-perfect-fifth {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-perfect-fifth:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 66.66667%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-perfect-fifth:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-perfect-fifth > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-sixth {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-sixth:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 62.5%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-sixth:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-sixth > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-golden-section {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-golden-section:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 61.8047%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-golden-section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-golden-section > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-sixth {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-sixth:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 60%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-sixth:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-sixth > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-seventh {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-seventh:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-seventh:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-minor-seventh > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-seventh {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-seventh:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 53.33333%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-seventh:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-seventh > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-octave {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-octave:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 50%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-octave:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-octave > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-tenth {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-tenth:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 40%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-tenth:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-tenth > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-eleventh {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-eleventh:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 37.5%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-eleventh:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-eleventh > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-twelfth {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-twelfth:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 33.33333%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-twelfth:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-major-twelfth > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 224, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-double-octave {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 6, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-double-octave:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 25%;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-double-octave:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_chartist.scss */
+.ct-double-octave > svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media (min-width: 992px) {
+  /* line 2, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-form {
+    margin-top: 21px;
+    margin-bottom: 21px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  /* line 8, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav > li > .dropdown-menu, .dropdown .dropdown-menu {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 370ms cubic-bezier(0.34, 1.61, 0.7, 1);
+    -moz-transition: all 370ms cubic-bezier(0.34, 1.61, 0.7, 1);
+    -o-transition: all 370ms cubic-bezier(0.34, 1.61, 0.7, 1);
+    -ms-transition: all 370ms cubic-bezier(0.34, 1.61, 0.7, 1);
+    transition: all 370ms cubic-bezier(0.34, 1.61, 0.7, 1);
+  }
+  /* line 12, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav > li.open > .dropdown-menu, .dropdown.open .dropdown-menu {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 29px -50px;
+    -moz-transform-origin: 29px -50px;
+    -o-transform-origin: 29px -50px;
+    -ms-transform-origin: 29px -50px;
+    transform-origin: 29px -50px;
+  }
+  /* line 18, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav > li > .dropdown-menu:before {
+    border-bottom: 11px solid rgba(0, 0, 0, 0.2);
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 12px;
+    top: -11px;
+  }
+  /* line 28, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav > li > .dropdown-menu:after {
+    border-bottom: 11px solid #FFFFFF;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 12px;
+    top: -10px;
+  }
+  /* line 39, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav.navbar-right > li > .dropdown-menu:before {
+    left: auto;
+    right: 12px;
+  }
+  /* line 44, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav.navbar-right > li > .dropdown-menu:after {
+    left: auto;
+    right: 12px;
+  }
+  /* line 51, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .footer:not(.footer-big) nav > ul li:first-child {
+    margin-left: 0;
+  }
+  /* line 57, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  body > .navbar-collapse.collapse {
+    display: none !important;
+  }
+  /* line 63, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .card form [class*="col-"] {
+    padding: 6px;
+  }
+  /* line 66, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .card form [class*="col-"]:first-child {
+    padding-left: 15px;
+  }
+  /* line 69, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .card form [class*="col-"]:last-child {
+    padding-right: 15px;
+  }
+}
+
+/*          Changes for small display      */
+@media (max-width: 991px) {
+  /* line 79, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .sidebar {
+    display: none;
+  }
+  /* line 83, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .main-panel {
+    width: 100%;
+  }
+  /* line 86, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-transparent {
+    padding-top: 15px;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+  /* line 90, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  body {
+    position: relative;
+  }
+  /* line 93, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .wrapper {
+    -webkit-transform: translate3d(0px, 0, 0);
+    -moz-transform: translate3d(0px, 0, 0);
+    -o-transform: translate3d(0px, 0, 0);
+    -ms-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
+    -webkit-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -moz-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -o-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    left: 0;
+    background-color: white;
+  }
+  /* line 99, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar .container {
+    left: 0;
+    width: 100%;
+    -webkit-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -moz-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -o-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    position: relative;
+  }
+  /* line 105, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar .navbar-collapse.collapse,
+  .navbar .navbar-collapse.collapse.in,
+  .navbar .navbar-collapse.collapsing {
+    display: none !important;
+  }
+  /* line 111, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav > li {
+    float: none;
+    position: relative;
+    display: block;
+  }
+  /* line 117, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  body > .navbar-collapse {
+    position: fixed;
+    display: block;
+    top: 0;
+    height: 100%;
+    right: 0;
+    left: auto;
+    z-index: 1032;
+    visibility: visible;
+    background-color: #999;
+    overflow-y: visible;
+    border-top: none;
+    text-align: left;
+    padding: 0;
+    -webkit-transform: translate3d(260px, 0, 0);
+    -moz-transform: translate3d(260px, 0, 0);
+    -o-transform: translate3d(260px, 0, 0);
+    -ms-transform: translate3d(260px, 0, 0);
+    transform: translate3d(260px, 0, 0);
+    -webkit-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -moz-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -o-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  }
+  /* line 134, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  body > .navbar-collapse > ul {
+    position: relative;
+    z-index: 4;
+    overflow-y: scroll;
+    height: calc(100vh - 61px);
+    width: 100%;
+  }
+  /* line 142, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  body > .navbar-collapse::before {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #282828;
+    display: block;
+    content: "";
+    z-index: 1;
+  }
+  /* line 154, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  body > .navbar-collapse .logo {
+    position: relative;
+    z-index: 4;
+  }
+  /* line 159, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  body > .navbar-collapse .nav li > a {
+    padding: 10px 15px;
+  }
+  /* line 163, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .nav-open .navbar-collapse {
+    -webkit-transform: translate3d(0px, 0, 0);
+    -moz-transform: translate3d(0px, 0, 0);
+    -o-transform: translate3d(0px, 0, 0);
+    -ms-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
+  }
+  /* line 166, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .nav-open .navbar .container {
+    left: -250px;
+  }
+  /* line 169, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .nav-open .wrapper {
+    left: 0;
+    -webkit-transform: translate3d(-260px, 0, 0);
+    -moz-transform: translate3d(-260px, 0, 0);
+    -o-transform: translate3d(-260px, 0, 0);
+    -ms-transform: translate3d(-260px, 0, 0);
+    transform: translate3d(-260px, 0, 0);
+  }
+  /* line 173, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-toggle .icon-bar {
+    display: block;
+    position: relative;
+    background: #fff;
+    width: 24px;
+    height: 2px;
+    border-radius: 1px;
+    margin: 0 auto;
+  }
+  /* line 183, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-header .navbar-toggle {
+    margin: 10px 15px 10px 0;
+    width: 40px;
+    height: 40px;
+  }
+  /* line 188, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .bar1,
+  .bar2,
+  .bar3 {
+    outline: 1px solid transparent;
+  }
+  /* line 193, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .bar1 {
+    top: 0px;
+    -webkit-animation: topbar-back 500ms linear 0s;
+    -moz-animation: topbar-back 500ms linear 0s;
+    animation: topbar-back 500ms 0s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  /* line 197, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .bar2 {
+    opacity: 1;
+  }
+  /* line 200, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .bar3 {
+    bottom: 0px;
+    -webkit-animation: bottombar-back 500ms linear 0s;
+    -moz-animation: bottombar-back 500ms linear 0s;
+    animation: bottombar-back 500ms 0s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  /* line 204, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .toggled .bar1 {
+    top: 6px;
+    -webkit-animation: topbar-x 500ms linear 0s;
+    -moz-animation: topbar-x 500ms linear 0s;
+    animation: topbar-x 500ms 0s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  /* line 208, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .toggled .bar2 {
+    opacity: 0;
+  }
+  /* line 211, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .toggled .bar3 {
+    bottom: 6px;
+    -webkit-animation: bottombar-x 500ms linear 0s;
+    -moz-animation: bottombar-x 500ms linear 0s;
+    animation: bottombar-x 500ms 0s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  @keyframes topbar-x {
+    0% {
+      top: 0px;
+      transform: rotate(0deg);
+    }
+    45% {
+      top: 6px;
+      transform: rotate(145deg);
+    }
+    75% {
+      transform: rotate(130deg);
+    }
+    100% {
+      transform: rotate(135deg);
+    }
+  }
+  @-webkit-keyframes topbar-x {
+    0% {
+      top: 0px;
+      -webkit-transform: rotate(0deg);
+    }
+    45% {
+      top: 6px;
+      -webkit-transform: rotate(145deg);
+    }
+    75% {
+      -webkit-transform: rotate(130deg);
+    }
+    100% {
+      -webkit-transform: rotate(135deg);
+    }
+  }
+  @-moz-keyframes topbar-x {
+    0% {
+      top: 0px;
+      -moz-transform: rotate(0deg);
+    }
+    45% {
+      top: 6px;
+      -moz-transform: rotate(145deg);
+    }
+    75% {
+      -moz-transform: rotate(130deg);
+    }
+    100% {
+      -moz-transform: rotate(135deg);
+    }
+  }
+  @keyframes topbar-back {
+    0% {
+      top: 6px;
+      transform: rotate(135deg);
+    }
+    45% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+    100% {
+      top: 0px;
+      transform: rotate(0);
+    }
+  }
+  @-webkit-keyframes topbar-back {
+    0% {
+      top: 6px;
+      -webkit-transform: rotate(135deg);
+    }
+    45% {
+      -webkit-transform: rotate(-10deg);
+    }
+    75% {
+      -webkit-transform: rotate(5deg);
+    }
+    100% {
+      top: 0px;
+      -webkit-transform: rotate(0);
+    }
+  }
+  @-moz-keyframes topbar-back {
+    0% {
+      top: 6px;
+      -moz-transform: rotate(135deg);
+    }
+    45% {
+      -moz-transform: rotate(-10deg);
+    }
+    75% {
+      -moz-transform: rotate(5deg);
+    }
+    100% {
+      top: 0px;
+      -moz-transform: rotate(0);
+    }
+  }
+  @keyframes bottombar-x {
+    0% {
+      bottom: 0px;
+      transform: rotate(0deg);
+    }
+    45% {
+      bottom: 6px;
+      transform: rotate(-145deg);
+    }
+    75% {
+      transform: rotate(-130deg);
+    }
+    100% {
+      transform: rotate(-135deg);
+    }
+  }
+  @-webkit-keyframes bottombar-x {
+    0% {
+      bottom: 0px;
+      -webkit-transform: rotate(0deg);
+    }
+    45% {
+      bottom: 6px;
+      -webkit-transform: rotate(-145deg);
+    }
+    75% {
+      -webkit-transform: rotate(-130deg);
+    }
+    100% {
+      -webkit-transform: rotate(-135deg);
+    }
+  }
+  @-moz-keyframes bottombar-x {
+    0% {
+      bottom: 0px;
+      -moz-transform: rotate(0deg);
+    }
+    45% {
+      bottom: 6px;
+      -moz-transform: rotate(-145deg);
+    }
+    75% {
+      -moz-transform: rotate(-130deg);
+    }
+    100% {
+      -moz-transform: rotate(-135deg);
+    }
+  }
+  @keyframes bottombar-back {
+    0% {
+      bottom: 6px;
+      transform: rotate(-135deg);
+    }
+    45% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      bottom: 0px;
+      transform: rotate(0);
+    }
+  }
+  @-webkit-keyframes bottombar-back {
+    0% {
+      bottom: 6px;
+      -webkit-transform: rotate(-135deg);
+    }
+    45% {
+      -webkit-transform: rotate(10deg);
+    }
+    75% {
+      -webkit-transform: rotate(-5deg);
+    }
+    100% {
+      bottom: 0px;
+      -webkit-transform: rotate(0);
+    }
+  }
+  @-moz-keyframes bottombar-back {
+    0% {
+      bottom: 6px;
+      -moz-transform: rotate(-135deg);
+    }
+    45% {
+      -moz-transform: rotate(10deg);
+    }
+    75% {
+      -moz-transform: rotate(-5deg);
+    }
+    100% {
+      bottom: 0px;
+      -moz-transform: rotate(0);
+    }
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* line 234, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .dropdown-menu .divider {
+    background-color: rgba(229, 229, 229, 0.15);
+  }
+  /* line 238, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav {
+    margin: 1px 0;
+  }
+  /* line 242, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav .open .dropdown-menu > li > a {
+    padding: 10px 15px 10px 60px;
+  }
+  /* line 249, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  [class*="navbar-"] .navbar-nav > li > a,
+  [class*="navbar-"] .navbar-nav > li > a:hover,
+  [class*="navbar-"] .navbar-nav > li > a:focus,
+  [class*="navbar-"] .navbar-nav .active > a,
+  [class*="navbar-"] .navbar-nav .active > a:hover,
+  [class*="navbar-"] .navbar-nav .active > a:focus,
+  [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a,
+  [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:hover,
+  [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:focus,
+  [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:active {
+    color: white;
+  }
+  /* line 262, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  [class*="navbar-"] .navbar-nav > li > a,
+  [class*="navbar-"] .navbar-nav > li > a:hover,
+  [class*="navbar-"] .navbar-nav > li > a:focus {
+    opacity: .7;
+    background-color: transparent;
+    outline: none;
+  }
+  /* line 270, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:hover,
+  [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  /* line 277, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  [class*="navbar-"] .navbar-nav.navbar-nav .open .dropdown-menu > li > a:active {
+    opacity: 1;
+  }
+  /* line 282, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  [class*="navbar-"] .navbar-nav .dropdown > a:hover .caret {
+    border-bottom-color: #fff;
+    border-top-color: #fff;
+  }
+  /* line 286, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  [class*="navbar-"] .navbar-nav .dropdown > a:active .caret {
+    border-bottom-color: white;
+    border-top-color: white;
+  }
+  /* line 294, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .dropdown-menu {
+    display: none;
+  }
+  /* line 297, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-fixed-top {
+    -webkit-backface-visibility: hidden;
+  }
+  /* line 300, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  #bodyClick {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: auto;
+    right: 250px;
+    content: "";
+    z-index: 9999;
+    overflow-x: hidden;
+  }
+  /* line 313, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .social-line .btn {
+    margin: 0 0 10px 0;
+  }
+  /* line 316, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .subscribe-line .form-control {
+    margin: 0 0 10px 0;
+  }
+  /* line 319, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .social-line.pull-right {
+    float: none;
+  }
+  /* line 322, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .footer nav.pull-left {
+    float: none !important;
+  }
+  /* line 325, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .footer:not(.footer-big) nav > ul li {
+    float: none;
+  }
+  /* line 328, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .social-area.pull-right {
+    float: none !important;
+  }
+  /* line 331, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .form-control + .form-control-feedback {
+    margin-top: -8px;
+  }
+  /* line 334, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-toggle:hover, .navbar-toggle:focus {
+    background-color: transparent !important;
+  }
+  /* line 337, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .btn.dropdown-toggle {
+    margin-bottom: 0;
+  }
+  /* line 340, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .media-post .author {
+    width: 20%;
+    float: none !important;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  /* line 346, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .media-post .media-body {
+    width: 100%;
+  }
+  /* line 350, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-collapse.collapse {
+    height: 100% !important;
+  }
+  /* line 353, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-collapse.collapse.in {
+    display: block;
+  }
+  /* line 356, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-header .collapse, .navbar-toggle {
+    display: block !important;
+  }
+  /* line 359, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-header {
+    float: none;
+  }
+  /* line 362, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  /* line 373, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-collapse .nav p {
+    font-size: 14px;
+    margin: 0;
+  }
+  /* line 378, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-collapse [class^="pe-7s-"] {
+    float: left;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 389, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .table-full-width {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  /* line 393, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .table-responsive {
+    overflow: visible;
+  }
+  /* line 397, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .navbar-nav p {
+    line-height: normal;
+    margin: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  /* line 405, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/dashboard/_responsive.scss */
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/*# sourceMappingURL=../css/dashboard.map */

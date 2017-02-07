@@ -1,1 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i');
+
+html {
+	font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#logo {
+	background-image: url('/static/images/logo.png');
+	background-size: 100px 100px;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 140px;
+}
+
+.transaction {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 15px;
+	height: 70px;
+
+	.info {
+		h6 {
+			text-transform: none;
+			font-size: 20px;
+			font-weight: 400;
+		}
+		p {
+			font-size: 14px;
+			font-weight: 400;
+		}
+	}
+
+	> .monies {
+		ul {
+			display: flex;
+			list-style-type: none;
+			text-align: right;
+			float: right;
+			margin-left: 15px;
+
+			&.is-load {
+				color: #37a261;
+			}
+
+			> .monies-non-decimal,
+			  .monies-direction {
+				font-size: 28px;
+				font-weight: 300;
+			}
+			> .monies-decimal {
+				font-size: 15px;
+				font-weight: 400;
+				padding-top: 13px;
+			}
+		}
+	}
+}
+
 @import 'partials/_alert';

@@ -1,7 +1,90 @@
-{{ if notEq .useLayout "false" }}
+{{ if eq .useLayout "true" }}
 	{{ template "content" . }}
 {{ end }}
 
-{{ if eq .useLayout "false" }}
-	{{ template "content" . }}
+{{ if notEq .useLayout "true" }}
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ .title }}</title>
+		<link rel="stylesheet" href="/static/css/core.css" />
+		<link rel="stylesheet" href="/static/css/dashboard.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="sidebar" data-color="azure">
+				<div class="sidebar-wrapper">
+					<div id="logo"></div>
+					<ul class="nav">
+						{{ range $account := .accounts }}
+							<li class="active">
+								<a href="/accounts/{{ $account.ID }}/transactions">
+									<p>
+										Transactions
+									</p>
+								</a>
+							</li>
+						{{ end }}
+						<li>
+							<a href="table.html">
+								<i class="pe-7s-note2"></i>
+								<p>Table List</p>
+							</a>
+						</li>
+						<li>
+							<a href="typography.html">
+								<i class="pe-7s-news-paper"></i>
+								<p>Typography</p>
+							</a>
+						</li>
+						<li>
+							<a href="icons.html">
+								<i class="pe-7s-science"></i>
+								<p>Icons</p>
+							</a>
+						</li>
+						<li>
+							<a href="maps.html">
+								<i class="pe-7s-map-marker"></i>
+								<p>Maps</p>
+							</a>
+						</li>
+						<li>
+							<a href="notifications.html">
+								<i class="pe-7s-bell"></i>
+								<p>Notifications</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+				<div class="content">
+					{{ template "content" . }}
+				</div>
+				<footer class="footer">
+					<div class="container-fluid">
+						<p class="copyright pull-right">
+							&copy;
+							<script>
+								document.write(new Date().getFullYear())
+							</script>
+							<a href="https://twitter.com/0xdeafcafe">Alex Forbes-Reed</a>, some Monzo goodness for the web.
+						</p>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</body>
+	</html>
 {{ end }}

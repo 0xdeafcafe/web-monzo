@@ -1,3 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i");
+/* line 3, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+html {
+  font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* line 7, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+#logo {
+  background-image: url("/static/images/logo.png");
+  background-size: 100px 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 140px;
+}
+
+/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+.transaction {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  height: 70px;
+}
+
+/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+.transaction .info h6 {
+  text-transform: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* line 26, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+.transaction .info p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* line 33, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+.transaction > .monies ul {
+  display: flex;
+  list-style-type: none;
+  text-align: right;
+  float: right;
+  margin-left: 15px;
+}
+
+/* line 40, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+.transaction > .monies ul.is-load {
+  color: #37a261;
+}
+
+/* line 44, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+.transaction > .monies ul > .monies-non-decimal,
+.transaction > .monies ul .monies-direction {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+/* line 49, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+.transaction > .monies ul > .monies-decimal {
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 13px;
+}
+
 /* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/partials/_alert.scss */
 .alert {
   border: 1px solid #fff;

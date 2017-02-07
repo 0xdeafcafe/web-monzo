@@ -19,10 +19,10 @@
 		<p>
 			write something here
 		</p>
-		{{ if .warning }}
-			<div class="alert alert-warning">
-				<strong>Oops...</strong><br />
-				{{ .warning }}
+		{{ range $flash := .flash }}
+			<div class="alert alert-{{ $flash.Type }}">
+				<strong>{{ $flash.Title }}</strong><br />
+				{{ $flash.Message }}
 			</div>
 		{{ end }}
 		<a href="/auth/create">

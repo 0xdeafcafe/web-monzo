@@ -1,6 +1,11 @@
 {
-	"clientId": "",
-	"clientSecret": "",
-	"applicationUrl": "",
-	"dsn": ""
+	"mongo": {
+		"connection_string": "",
+		"database_name": ""
+	},
+	"client_id": "",
+	"client_secret": "",
+	"application_url": "",
+	"dsn": "",
+	"cookie_secret": ""
 }

@@ -1,22 +1,16 @@
 package helpers
 
-import (
-	"github.com/0xdeafcafe/web-monzo/models"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
-)
+import "github.com/maxwellhealth/bongo"
 
 // NewDatabaseConnection creates a new database connection
-func NewDatabaseConnection(connectionString string) *gorm.DB {
-	db, err := gorm.Open("mysql", connectionString)
-	db.LogMode(true)
-
+func NewDatabaseConnection(connectionString, database string) *bongo.Connection {
+	connection, err := bongo.Connect(&bongo.Config{
+		ConnectionString: connectionString,
+		Database:         database,
+	})
 	if err != nil {
 		panic(err)
 	}
 
-	// Run those dank migrations
-	db.AutoMigrate(&models.Cookie{})
-
-	return db
+	return connection
 }

@@ -19,11 +19,11 @@ const authRedirect = "https://auth.getmondo.co.uk/?client_id=%s&redirect_uri=%sa
 // Index ..
 func (hndlr AuthHandler) Index(c *gin.Context) {
 	session := sessions.Default(c)
-	warning := session.Get("_warning")
+	flashes := session.Flashes()
 	c.HTML(http.StatusOK, "auth/index", gin.H{
 		"title":     "ay",
 		"useLayout": "true",
-		"warning":   warning,
+		"flash":     flashes,
 	})
 }
 
@@ -37,25 +37,27 @@ func (hndlr AuthHandler) Create(c *gin.Context) {
 // Callback ..
 func (hndlr AuthHandler) Callback(c *gin.Context) {
 	code := c.Query("code")
+	session := sessions.Default(c)
 
 	token, monzoError, err := hndlr.Context.Monzo.RequestAccessToken(code)
 	if err != nil {
-		session := sessions.Default(c)
 		errorStr := ""
 		if monzoError != nil {
 			errorStr = monzoError.ErrorDescription
 		} else {
 			errorStr = err.Error()
 		}
-		session.Set("_warning", errorStr)
+		session.AddFlash(models.NewWarningFlash("Oops..", errorStr))
 		session.Save()
+
 		c.Redirect(http.StatusTemporaryRedirect, "/auth")
 		return
 	}
 
-	cookie := models.NewCookie(token, c.ClientIP())
-	hndlr.Context.DB.Create(&cookie)
-	c.JSON(http.StatusOK, &cookie)
+	webSession := models.NewWebSession(hndlr.Context.Mongo, token, c.ClientIP())
+	session.Set("webSessionID", webSession.Id.Hex())
+	session.Save()
+	c.Redirect(http.StatusTemporaryRedirect, "/")
 }
 
 // NewAuthHandler creates a new AuthHandler and registers the reqired routes
