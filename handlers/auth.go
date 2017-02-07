@@ -21,7 +21,7 @@ func (hndlr AuthHandler) Index(c *gin.Context) {
 	session := sessions.Default(c)
 	flashes := session.Flashes()
 	c.HTML(http.StatusOK, "auth/index", gin.H{
-		"title":     "ay",
+		"title":     "WebMonzo - Authenticate",
 		"useLayout": "true",
 		"flash":     flashes,
 	})

@@ -1,0 +1,163 @@
+.transaction {
+	border-bottom: 1px solid #ececec;
+	padding: 20px 0;
+	height: 85px;
+	width: 100%;
+
+	&:hover {
+		transition-property: background-color;
+		transition-duration: .5s;
+		background-color: #ececec;
+	}
+
+	> a {
+		text-decoration: none;
+		color: #333;
+
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	.icon {
+		width: 100px;
+		order: 0;
+
+		> .placeholder-icon {
+			width: 40px;
+			height: 40px;
+			margin: 0 auto;
+			border-radius: 100px;
+			border: 0px solid #fff;
+			background-color: #37a261;
+			content: "EG";
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+
+		> .merchant-icon {
+			width: 40px;
+			height: 40px;
+			margin: 0 auto;
+			background-size: contain;
+			border-radius: 5px;
+		}
+	}
+
+	.info {
+		order: 1;
+		h6 {
+			text-transform: none;
+			font-size: 20px;
+			font-weight: 400;
+			margin: 0;
+		}
+		p {
+			font-size: 12px;
+			font-weight: 400;
+			margin: 0;
+			margin-top: 5px;
+		}
+	}
+
+	.monies {
+		order: 2;
+		position: absolute;
+		right: 20px;
+
+		ul {
+			display: flex;
+			list-style-type: none;
+			text-align: right;
+			float: right;
+			margin-left: 15px;
+
+			&.is-load {
+				color: #37a261;
+			}
+
+			> .monies-non-decimal,
+			  .monies-direction {
+				font-size: 28px;
+				font-weight: 300;
+			}
+			> .monies-decimal {
+				font-size: 15px;
+				font-weight: 400;
+				padding-top: 13px;
+			}
+		}
+	}
+}
+
+.transaction-detailed {
+	> #map {
+		height: 240px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: #eee;
+		border-bottom: 1px solid #aaa;
+	}
+
+	> .icon-overlay {
+		position: relative;
+		margin-top: 200px;
+		background: transparent;
+
+		> .icon-container {
+			margin: 0 auto;
+
+			> .placeholder-icon {
+				width: 140px;
+				height: 140px;
+				margin: 0 auto;
+				border-radius: 100px;
+				border: 0px solid #fff;
+				background-color: #37a261;
+				content: "EG";
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+
+			> .merchant-icon {
+				width: 140px;
+				height: 140px;
+				background-size: contain;
+				margin: 0 auto;
+				border-radius: 15px;
+			}
+		}
+	}
+
+	> .info {
+		text-align: center;
+
+		> h1 {
+			font-size: 26px;
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+
+		> p {
+			color: #89898e;
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+
+		> .amount {
+			margin: 0 auto;
+			font-weight: 200;
+
+			> .currency-glyph {
+				font-size: 27px;
+				color: #13223b;
+			}
+			> .currency-value {
+				font-size: 50px;
+				color: #13223b;
+			}
+		}
+	}
+}

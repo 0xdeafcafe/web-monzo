@@ -18,8 +18,14 @@ type HomeHandler struct {
 // Index is the index route of the Home Handler
 func (hndlr HomeHandler) Index(c *gin.Context) {
 	session := sessions.Default(c)
-	webSession := models.GetValidWebSession(hndlr.Context.Mongo, session.Get("webSessionID"), c.ClientIP())
-	_, webSession = webSession.Refresh(hndlr.Context.Mongo, hndlr.Context.Monzo, session)
+	webSession, err := models.GetWebSession(hndlr.Context.Mongo, hndlr.Context.Monzo, session, c.ClientIP())
+	if err != nil {
+		session.AddFlash(err)
+		session.Save()
+		c.Redirect(http.StatusTemporaryRedirect, "/auth")
+		return
+	}
+
 	monzoAccounts, _, err := hndlr.Context.Monzo.ListAccounts(webSession.ToToken())
 	if err != nil {
 		panic(err)

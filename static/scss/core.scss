@@ -4,6 +4,11 @@ html {
 	font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.main-panel > .content {
+	padding: 0;
+	background: transparent;
+}
+
 #logo {
 	background-image: url('/static/images/logo.png');
 	background-size: 100px 100px;
@@ -12,47 +17,15 @@ html {
 	height: 140px;
 }
 
-.transaction {
-	border-bottom: 1px solid #eee;
-	margin-bottom: 15px;
-	height: 70px;
+a {
+	text-decoration: none;
+	color: #26a8dd;
+	transition: .5s;
 
-	.info {
-		h6 {
-			text-transform: none;
-			font-size: 20px;
-			font-weight: 400;
-		}
-		p {
-			font-size: 14px;
-			font-weight: 400;
-		}
-	}
-
-	> .monies {
-		ul {
-			display: flex;
-			list-style-type: none;
-			text-align: right;
-			float: right;
-			margin-left: 15px;
-
-			&.is-load {
-				color: #37a261;
-			}
-
-			> .monies-non-decimal,
-			  .monies-direction {
-				font-size: 28px;
-				font-weight: 300;
-			}
-			> .monies-decimal {
-				font-size: 15px;
-				font-weight: 400;
-				padding-top: 13px;
-			}
-		}
+	&:hover {
+		color: #2091bf;
 	}
 }
 
-@import 'partials/_alert';
+@import 'transactions';
+@import 'partials/alert';

@@ -1,0 +1,58 @@
+{{ define "content" }}
+	<div class="transaction-detailed">
+		<div id="map"></div>
+		<div class="icon-overlay">
+			<div class="icon-container">
+				{{ if eq .transaction.HasLogo true }}
+					<div class="merchant-icon" style="background-image: url('{{ .transaction.LogoOrHex }}')"></div>
+				{{ end }}
+				{{ if eq .transaction.HasLogo false }}
+					<div class="placeholder-icon" style="background-color: {{ .transaction.LogoOrHex }};"></div>
+				{{ end }}
+			</div>
+		</div>
+		<div class="info">
+			<h1>
+				{{ .transaction.FriendlyName }}
+			</h1>
+			{{ if eq .transaction.Merchant.Online true }}
+				<p>
+					Online Transaction
+				</p>
+			{{ end }}
+			{{ if eq .transaction.Merchant.Online false }}
+				<p class="address">
+					<a href="https://www.google.com/maps/search/{{ .transaction.Merchant.Address.ShortFormatted }}" target="_blank">
+						{{ .transaction.Merchant.Address.ShortFormatted }}
+					</a>
+				</p>
+			{{ end }}
+			<div class="amount">
+				<span class="currency-glyph">£</span>
+				<span class="currency-value">{{ .transaction.AmountInteger }}{{ .transaction.AmountFractional }}</span>
+			</div>
+		</div>
+	</div>
+	{{ if eq .transaction.HasPhysicalLocation true }}
+		<script>
+			var lat = parseFloat('{{ .transaction.Merchant.Address.Latitude }}');
+			var long = parseFloat('{{ .transaction.Merchant.Address.Longitude }}');
+			var zoomLvl = parseInt('{{ .transaction.Merchant.Address.ZoomLevel }}');
+			console.log(lat);
+			console.log(long);
+			function initMap() {
+				var uluru = {lat: lat, lng: long};
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: zoomLvl,
+					center: uluru,
+					disableDefaultUI: true,
+				});
+				var marker = new google.maps.Marker({
+					position: uluru,
+					map: map,
+				});
+			}
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSoqFNfF1LIRI2ayUJZ0YFGSUiWYSI-CQ&amp;callback=initMap"></script>
+	{{ end }}
+{{ end }}

@@ -4,10 +4,13 @@ import (
 	"net/http"
 	"time"
 
+	"fmt"
+
 	monzoModels "github.com/0xdeafcafe/gomonzo/models"
 	"github.com/0xdeafcafe/web-monzo/models"
 	"github.com/gin-contrib/sessions"
 	"gopkg.in/gin-gonic/gin.v1"
+	"gopkg.in/mgo.v2/bson"
 )
 
 // AccountsHandler ..
@@ -17,10 +20,11 @@ type AccountsHandler struct {
 
 // ListTransactions ..
 func (hndlr AccountsHandler) ListTransactions(c *gin.Context) {
-	accountID := c.Param("account_id")
 	session := sessions.Default(c)
-	webSession := models.GetValidWebSession(hndlr.Context.Mongo, session.Get("webSessionID"), c.ClientIP())
-	if webSession == nil {
+	webSession, err := models.GetWebSession(hndlr.Context.Mongo, hndlr.Context.Monzo, session, c.ClientIP())
+	if err != nil {
+		session.AddFlash(err)
+		session.Save()
 		c.Redirect(http.StatusTemporaryRedirect, "/auth")
 		return
 	}
@@ -31,6 +35,7 @@ func (hndlr AccountsHandler) ListTransactions(c *gin.Context) {
 		panic(err)
 	}
 
+	accountID := c.Param("account_id")
 	account := new(monzoModels.Account)
 	for _, acc := range monzoAccounts.Accounts {
 		if acc.ID == accountID {
@@ -55,11 +60,64 @@ func (hndlr AccountsHandler) ListTransactions(c *gin.Context) {
 	}
 
 	c.HTML(http.StatusOK, "accounts/transactions", gin.H{
-		"title":        "Home",
+		"title":        "Transactions",
 		"accounts":     &monzoAccounts.Accounts,
 		"account":      &account,
 		"transactions": models.GetTransactionsByAccountID(hndlr.Context.Mongo, account.ID, 100),
 		"flash":        session.Flashes(),
+	})
+}
+
+// ViewTransaction ..
+func (hndlr AccountsHandler) ViewTransaction(c *gin.Context) {
+	session := sessions.Default(c)
+	webSession, err := models.GetWebSession(hndlr.Context.Mongo, hndlr.Context.Monzo, session, c.ClientIP())
+	if err != nil {
+		session.AddFlash(err)
+		session.Save()
+		c.Redirect(http.StatusTemporaryRedirect, "/auth")
+		return
+	}
+
+	token := webSession.ToToken()
+	monzoAccounts, _, err := hndlr.Context.Monzo.ListAccounts(token)
+	if err != nil {
+		panic(err)
+	}
+
+	accountID := c.Param("account_id")
+	account := new(monzoModels.Account)
+	for _, acc := range monzoAccounts.Accounts {
+		if acc.ID == accountID {
+			account = &acc
+		}
+	}
+	if account == nil {
+		panic("account not found")
+	}
+
+	monzoTransaction, monzoError, err := hndlr.Context.Monzo.GetTransaction(token, c.Param("transaction_id"))
+	if err != nil {
+		if err.Error() == "not_found.transaction_not_found" {
+			session.AddFlash(models.NewWarningFlash(monzoError.Message, monzoError.Code))
+			session.Save()
+			c.Redirect(http.StatusTemporaryRedirect, fmt.Sprintf("/accounts/%s/transactions", accountID))
+			return
+		}
+
+		panic(err)
+	}
+
+	models.AddTransaction(hndlr.Context.Mongo, monzoTransaction)
+	var transaction models.Transaction
+	hndlr.Context.Mongo.Collection(models.TransactionCollectionName).FindOne(bson.M{"transactionid": monzoTransaction.ID}, &transaction)
+	fmt.Println(transaction)
+	c.HTML(http.StatusOK, "accounts/transaction", gin.H{
+		"title":       fmt.Sprintf("%s - Transaction", transaction.FriendlyName()),
+		"accounts":    &monzoAccounts.Accounts,
+		"account":     &account,
+		"transaction": &transaction,
+		"flash":       session.Flashes(),
 	})
 }
 
@@ -69,4 +127,5 @@ func NewAccountsHandler(e *gin.Engine, c *models.Context) {
 	ctrl.Context = c
 
 	e.GET("accounts/:account_id/transactions", ctrl.ListTransactions)
+	e.GET("accounts/:account_id/transactions/:transaction_id", ctrl.ViewTransaction)
 }

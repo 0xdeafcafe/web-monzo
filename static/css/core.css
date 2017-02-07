@@ -5,6 +5,12 @@ html {
 }
 
 /* line 7, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+.main-panel > .content {
+  padding: 0;
+  background: transparent;
+}
+
+/* line 12, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
 #logo {
   background-image: url("/static/images/logo.png");
   background-size: 100px 100px;
@@ -13,28 +19,100 @@ html {
   height: 140px;
 }
 
-/* line 15, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
-.transaction {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 15px;
-  height: 70px;
+/* line 20, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+a {
+  text-decoration: none;
+  color: #26a8dd;
+  transition: .5s;
 }
 
-/* line 21, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+/* line 25, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+a:hover {
+  color: #2091bf;
+}
+
+/* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction {
+  border-bottom: 1px solid #ececec;
+  padding: 20px 0;
+  height: 85px;
+  width: 100%;
+}
+
+/* line 7, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction:hover {
+  transition-property: background-color;
+  transition-duration: .5s;
+  background-color: #ececec;
+}
+
+/* line 13, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction > a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* line 22, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .icon {
+  width: 100px;
+  order: 0;
+}
+
+/* line 26, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .icon > .placeholder-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 100px;
+  border: 0px solid #fff;
+  background-color: #37a261;
+  content: "EG";
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* line 38, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .icon > .merchant-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  background-size: contain;
+  border-radius: 5px;
+}
+
+/* line 47, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .info {
+  order: 1;
+}
+
+/* line 49, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
 .transaction .info h6 {
   text-transform: none;
   font-size: 20px;
   font-weight: 400;
+  margin: 0;
 }
 
-/* line 26, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
+/* line 55, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
 .transaction .info p {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
+  margin: 0;
+  margin-top: 5px;
 }
 
-/* line 33, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
-.transaction > .monies ul {
+/* line 63, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .monies {
+  order: 2;
+  position: absolute;
+  right: 20px;
+}
+
+/* line 68, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .monies ul {
   display: flex;
   list-style-type: none;
   text-align: right;
@@ -42,23 +120,105 @@ html {
   margin-left: 15px;
 }
 
-/* line 40, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
-.transaction > .monies ul.is-load {
+/* line 75, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .monies ul.is-load {
   color: #37a261;
 }
 
-/* line 44, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
-.transaction > .monies ul > .monies-non-decimal,
-.transaction > .monies ul .monies-direction {
+/* line 79, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .monies ul > .monies-non-decimal,
+.transaction .monies ul .monies-direction {
   font-size: 28px;
   font-weight: 300;
 }
 
-/* line 49, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/core.scss */
-.transaction > .monies ul > .monies-decimal {
+/* line 84, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction .monies ul > .monies-decimal {
   font-size: 15px;
   font-weight: 400;
   padding-top: 13px;
+}
+
+/* line 94, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > #map {
+  height: 240px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+  border-bottom: 1px solid #aaa;
+}
+
+/* line 104, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .icon-overlay {
+  position: relative;
+  margin-top: 200px;
+  background: transparent;
+}
+
+/* line 109, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .icon-overlay > .icon-container {
+  margin: 0 auto;
+}
+
+/* line 112, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .icon-overlay > .icon-container > .placeholder-icon {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  border-radius: 100px;
+  border: 0px solid #fff;
+  background-color: #37a261;
+  content: "EG";
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* line 124, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .icon-overlay > .icon-container > .merchant-icon {
+  width: 140px;
+  height: 140px;
+  background-size: contain;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+/* line 134, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .info {
+  text-align: center;
+}
+
+/* line 137, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .info > h1 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+/* line 143, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .info > p {
+  color: #89898e;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* line 149, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .info > .amount {
+  margin: 0 auto;
+  font-weight: 200;
+}
+
+/* line 153, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .info > .amount > .currency-glyph {
+  font-size: 27px;
+  color: #13223b;
+}
+
+/* line 157, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/_transactions.scss */
+.transaction-detailed > .info > .amount > .currency-value {
+  font-size: 50px;
+  color: #13223b;
 }
 
 /* line 1, /Users/alex/Source/go/src/github.com/0xdeafcafe/web-monzo/static/scss/partials/_alert.scss */

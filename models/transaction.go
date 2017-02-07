@@ -1,6 +1,7 @@
 package models
 
 import (
+	"hash/crc32"
 	"time"
 
 	"gopkg.in/mgo.v2/bson"
@@ -8,6 +9,8 @@ import (
 	"fmt"
 
 	"strings"
+
+	"math"
 
 	"github.com/0xdeafcafe/gomonzo/models"
 	raven "github.com/getsentry/raven-go"
@@ -64,19 +67,15 @@ func (transaction Transaction) Update(connection *bongo.Connection, newTransacti
 	}
 }
 
-// FriendlyAmount ..
-func (transaction Transaction) FriendlyAmount() string {
-	amount := float64(transaction.Amount) / 100
-	amountStr := fmt.Sprintf("%.0f.", amount)
-	if amount >= 0 {
-		return amountStr
-	}
-
-	return strings.Split(amountStr, "-")[1]
+// AmountInteger ..
+func (transaction Transaction) AmountInteger() string {
+	amountPrecise := float64(transaction.Amount) / 100
+	amount := math.Abs(amountPrecise) // to remove potential negative
+	return fmt.Sprintf("%d.", int64(amount))
 }
 
-// FriendlyDecimalAmount ..
-func (transaction Transaction) FriendlyDecimalAmount() string {
+// AmountFractional ..
+func (transaction Transaction) AmountFractional() string {
 	amount := float64(transaction.Amount) / 100
 	amountStr := fmt.Sprintf("%.2f", amount)
 	return strings.Split(amountStr, ".")[1]
@@ -88,6 +87,36 @@ func (transaction Transaction) FriendlyName() string {
 		return transaction.Merchant.Name
 	}
 	return transaction.Description
+}
+
+// HasLogo ..
+func (transaction Transaction) HasLogo() bool {
+	return transaction.Merchant != nil
+}
+
+// LogoOrHex ..
+func (transaction Transaction) LogoOrHex() string {
+	if transaction.HasLogo() {
+		return transaction.Merchant.Logo
+	}
+
+	// Create RGB mapping
+	hash := crc32.ChecksumIEEE([]byte(transaction.Description))
+	r := (hash & 0xFF0000) >> 16
+	g := (hash & 0x00FF00) >> 8
+	b := (hash & 0x0000FF) >> 16
+
+	// Mix colours into aesthetically pleasing pallet
+	r = (r + 0xff) / 2
+	g = (g + 0xff) / 2
+	b = (b + 0xff) / 2
+
+	return fmt.Sprintf("#%02x%02x%02x", r, g, b)
+}
+
+// HasPhysicalLocation ..
+func (transaction Transaction) HasPhysicalLocation() bool {
+	return transaction.Merchant != nil && transaction.Merchant.Address != nil
 }
 
 // NewTransaction creates a new transaction from a Monzo Transaction.
