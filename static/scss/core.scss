@@ -4,9 +4,13 @@ html {
 	font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.main-panel > .content {
-	padding: 0;
-	background: transparent;
+.main-panel {
+	background: white;
+
+	> .content {
+		padding: 0;
+		background: transparent;
+	}
 }
 
 #logo {
@@ -24,6 +28,19 @@ a {
 
 	&:hover {
 		color: #2091bf;
+	}
+}
+
+// Buttons
+.btn {
+	border-radius: 6px;
+	font-size: 18px;
+	font-weight: bold;
+
+	&.btn-info {
+		background: #00A4DB;
+		color: white;
+		border: 0;
 	}
 }
 
