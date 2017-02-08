@@ -7,6 +7,7 @@ import (
 	"fmt"
 
 	monzoModels "github.com/0xdeafcafe/gomonzo/models"
+	"github.com/0xdeafcafe/web-monzo/helpers"
 	"github.com/0xdeafcafe/web-monzo/models"
 	"github.com/gin-contrib/sessions"
 	"gopkg.in/gin-gonic/gin.v1"
@@ -59,12 +60,31 @@ func (hndlr AccountsHandler) ListTransactions(c *gin.Context) {
 		models.AddTransaction(hndlr.Context.Mongo, &transaction)
 	}
 
+	transactions := models.GetTransactionsByAccountID(hndlr.Context.Mongo, account.ID, 100)
+	totalSpentToday := int64(0)
+	now := time.Now().UTC()
+	for _, transaction := range transactions {
+		if transaction.IsLoad {
+			continue
+		}
+
+		if helpers.CompareDates(transaction.Created, now) {
+			totalSpentToday = totalSpentToday + transaction.Amount
+			fmt.Println(totalSpentToday)
+			fmt.Println(transaction.Description)
+		} else {
+			break
+		}
+	}
+
+	fmt.Println(totalSpentToday)
 	c.HTML(http.StatusOK, "accounts/transactions", gin.H{
-		"title":        "Transactions",
-		"accounts":     &monzoAccounts.Accounts,
-		"account":      &account,
-		"transactions": models.GetTransactionsByAccountID(hndlr.Context.Mongo, account.ID, 100),
-		"flash":        session.Flashes(),
+		"title":           "Transactions",
+		"accounts":        &monzoAccounts.Accounts,
+		"account":         &account,
+		"totalSpentToday": &totalSpentToday,
+		"transactions":    &transactions,
+		"flash":           session.Flashes(),
 	})
 }
 

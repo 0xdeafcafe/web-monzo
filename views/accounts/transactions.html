@@ -1,42 +1,93 @@
 {{ define "content" }}
-	{{ range $transaction := .transactions }}
-	<div class="transaction">
-		<a href="/accounts/{{ $.account.ID }}/transactions/{{ $transaction.TransactionID }}">
-			<div class="icon">
-				{{ if eq $transaction.HasLogo true }}
-					<div class="merchant-icon" style="background-image: url('{{ $transaction.LogoOrHex }}')"></div>
-				{{ end }}
-				{{ if eq $transaction.HasLogo false }}
-					<div class="placeholder-icon" style="background-color: {{ $transaction.LogoOrHex }};"></div>
-				{{ end }}
-			</div>
-			<div class="info">
-				<h6>
-					{{ $transaction.FriendlyName }}
-				</h6>
-				{{ if notEq $transaction.Notes "" }}
-					<p>
-						{{ $transaction.Notes }}
-					</p>
-				{{ end }}
-			</div>
-			<div class="monies pull-right">
-				{{ if greaterThan $transaction.Amount 0}}
-					<ul class="is-load">
-						<li class="monies-direction">+</li>
-						<li class="monies-non-decimal">{{ $transaction.AmountInteger }}</li>
-						<li class="monies-decimal">{{ $transaction.AmountFractional }}</li>
-					</ul>
-				{{ end }}
-				{{ if lessThanOrEq $transaction.Amount 0}}
-					<ul>
-						<li class="monies-non-decimal">{{ $transaction.AmountInteger }}</li>
-						<li class="monies-decimal">{{ $transaction.AmountFractional }}</li>
-					</ul>
-				{{ end }}
-			</div>
-			<div class="clearfix"></div>
-		</a>
+	<div class="account-overview">
+		<div class="account-balance">
+			<ul>
+				{{ $lastTransaction := index .transactions 0 }}
+				<li class="currency-glyph">£</li>
+				<li class="amount-integer">{{ toIntegerSegment $lastTransaction.AccountBalance false }}</li>
+				<li class="amount-fractional">{{ toFractionalSegment $lastTransaction.AccountBalance true }}</li>
+			</ul>
+			<span class="desc">
+				Card Balance
+			</span>
+		</div>
+		<div class="transacton-history">
+			--
+		</div>
+		<div class="spent-today">
+			<ul>
+				<li class="amount-fractional">{{ toFractionalSegment .totalSpentToday true }}</li>
+				<li class="amount-integer">{{ toIntegerSegment .totalSpentToday false }}</li>
+				<li class="currency-glyph">£</li>
+			</ul>
+			<span class="desc">
+				Spent Today
+			</span>
+		</div>
 	</div>
+	<div class="time-devide">
+		TODAY
+	</div>
+	{{ range $index, $transaction := .transactions }}
+		{{ if greaterThan $index 0 }}
+			{{ $previousIndex := subtract $index 1 }}
+			{{ $previousTrasnaction := index $.transactions $previousIndex }}
+
+			{{ if differentDay $transaction.Created $previousTrasnaction.Created }}
+				<div class="time-devide">
+					{{ $transaction.Created.Format "Monday, 6 FEB" }}
+				</div>
+			{{ end }}
+		{{ end }}
+		<div class="transaction">
+			<a href="/accounts/{{ $.account.ID }}/transactions/{{ $transaction.TransactionID }}">
+				<div class="icon">
+					{{ if eq $transaction.HasLogo true }}
+						<div class="merchant-icon" style="background-image: url('{{ $transaction.LogoOrHex }}')"></div>
+					{{ end }}
+					{{ if eq $transaction.HasLogo false }}
+						<div class="placeholder-icon" style="background-color: {{ $transaction.LogoOrHex }};"></div>
+					{{ end }}
+				</div>
+				<div class="info">
+					<h6>
+						{{ $transaction.FriendlyName }}
+					</h6>
+					{{ if notEq $transaction.Notes "" }}
+						<p>
+							{{ $transaction.Notes }}
+						</p>
+					{{ end }}
+				</div>
+				{{ if notEq $transaction.Notes "Active card check" }}
+					<div class="monies pull-right">
+						{{ if greaterThan64 $transaction.Amount 0}}
+							<ul class="is-load">
+								<li class="monies-direction">+</li>
+								<li class="monies-non-decimal">{{ toIntegerSegment $transaction.Amount true }}</li>
+								<li class="monies-decimal">{{ toFractionalSegment $transaction.Amount false }}</li>
+							</ul>
+						{{ end }}
+						{{ if lessThanOrEq64 $transaction.Amount 0}}
+							<ul>
+								<li class="monies-non-decimal">{{ toIntegerSegment $transaction.Amount true }}</li>
+								<li class="monies-decimal">{{ toFractionalSegment $transaction.Amount false }}</li>
+							</ul>
+						{{ end }}
+					</div>
+				{{ end }}
+				{{ if eq $transaction.Notes "Active card check" }}
+					<div class="monies pull-right">
+						<form>
+							<button href="google.com" class="btn btn-info">
+								Clear
+							</button>
+						</form>
+					</div>
+				{{ end }}
+
+				<div class="clearfix"></div>
+			</a>
+		</div>
 	{{ end }}
 {{ end }}

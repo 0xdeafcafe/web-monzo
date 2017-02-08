@@ -29,7 +29,7 @@
 			{{ end }}
 			<div class="amount">
 				<span class="currency-glyph">£</span>
-				<span class="currency-value">{{ .transaction.AmountInteger }}{{ .transaction.AmountFractional }}</span>
+				<span class="currency-value">{{ toIntegerSegment .transaction.Amount true }}{{ toFractionalSegment .transaction.Amount false }}</span>
 			</div>
 		</div>
 	</div>
