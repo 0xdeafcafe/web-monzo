@@ -117,6 +117,7 @@ func GetWebSession(connection *bongo.Connection, monzo *gomonzo.GoMonzo, session
 		return nil, err
 	}
 	if refreshed {
+		session.Set("webSessionID", newWebSession.Id.Hex())
 		return newWebSession, nil
 	}
 
