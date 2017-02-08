@@ -8,10 +8,6 @@ import (
 
 	"fmt"
 
-	"strings"
-
-	"math"
-
 	"github.com/0xdeafcafe/gomonzo/models"
 	raven "github.com/getsentry/raven-go"
 	"github.com/maxwellhealth/bongo"
@@ -65,20 +61,6 @@ func (transaction Transaction) Update(connection *bongo.Connection, newTransacti
 	if err != nil {
 		raven.CaptureError(err, nil, nil)
 	}
-}
-
-// AmountInteger ..
-func (transaction Transaction) AmountInteger() string {
-	amountPrecise := float64(transaction.Amount) / 100
-	amount := math.Abs(amountPrecise) // to remove potential negative
-	return fmt.Sprintf("%d.", int64(amount))
-}
-
-// AmountFractional ..
-func (transaction Transaction) AmountFractional() string {
-	amount := float64(transaction.Amount) / 100
-	amountStr := fmt.Sprintf("%.2f", amount)
-	return strings.Split(amountStr, ".")[1]
 }
 
 // FriendlyName ..
