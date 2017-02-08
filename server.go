@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"log"
+	"time"
 
 	"fmt"
 
@@ -74,11 +75,36 @@ func main() {
 		"notEq": func(a, b interface{}) bool {
 			return a != b
 		},
-		"greaterThan": func(a, b int64) bool {
+
+		"greaterThan": func(a, b int) bool {
 			return a > b
 		},
-		"lessThanOrEq": func(a, b int64) bool {
+		"lessThanOrEq": func(a, b int) bool {
 			return a <= b
+		},
+		"subtract": func(a, b int) int {
+			return a - b
+		},
+
+		"greaterThan64": func(a, b int64) bool {
+			return a > b
+		},
+		"lessThanOrEq64": func(a, b int64) bool {
+			return a <= b
+		},
+		"subtract64": func(a, b int64) int64 {
+			return a - b
+		},
+
+		"differentDay": func(a, b time.Time) bool {
+			return a.Day() != b.Day()
+		},
+
+		"toIntegerSegment": func(a int64, incDec bool) string {
+			return helpers.ToIntegerSegment(a, incDec)
+		},
+		"toFractionalSegment": func(a int64, incDec bool) string {
+			return helpers.ToFractionalSegment(a, incDec)
 		},
 	}
 
